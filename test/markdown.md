@@ -2,19 +2,19 @@
 sort: 1
 ---
 
-# Markdown Elements
+# Markdown 语法
 
-Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+文本样式可以是 **加粗**, _斜体_, 或者 ~~删除线~~. [链接](https://github.com)。
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
+段落之间需要有空行。
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
+段落之间需要有空行。
 
-> There should be no margin above this first sentence.
+> 块引用的第一行不能有空行。
 >
-> Blockquotes should be a lighter gray with a gray border along the left side.
+> 块引用的文本是灰色背景，并且引用文本需要有左边缘线。
 >
-> There should be no margin below this final sentence.
+> 块引用的最后不能有空行。
 
 # Header 1
 
