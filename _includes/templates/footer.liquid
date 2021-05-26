@@ -40,7 +40,7 @@
     <a class="text-gray" href="{{ docs.repository_url }}/commit/{{ docs.build_revision }}" title="{{ docs.build_revision }}" rel="noreferrer" target="_blank">
         {{- docs.build_revision | slice: 0, 7 -}}
     </a>
-    {% unless site.url contains "rundocs.io" %}
+    <!--{% unless site.url contains "rundocs.io" %}
         <br>
         <div class="generator">
             Built with
@@ -50,5 +50,5 @@
             provided by
             <a href="https://rundocs.io" rel="noreferrer" target="_blank">RunDocs</a>.
         </div>
-    {% endunless %}
+    {% endunless %}-->
 </div>

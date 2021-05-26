@@ -7,4 +7,4 @@
 
 ## 好客租房项目
 
-《好客租房项目》融合了 `RPC` 、大数据等相技术，如 `SpringBoot` 、`SpringMVC`、 `Mybaits` 、`Dubbo` 、`React.js` 、`GraphQL` 、`RocketMQ` 、、`ELK` 等技术，实现了移动web应用、后台管理应用等功能。
+《好客租房项目》融合了 `RPC` 、大数据等相技术，如 `SpringBoot` 、`SpringMVC`、 `Mybaits` 、`Dubbo` 、`React.js` 、`GraphQL` 、`RocketMQ` 、`ELK` 等技术，实现了移动web应用、后台管理应用等功能。
