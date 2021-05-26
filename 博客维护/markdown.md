@@ -18,11 +18,11 @@ sort: 1
 
 # 一级标题
 
-这是标题下的一段正常段落。Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+这是标题下的一段正常段落。
 
 ## 二级标题
 
-> 这是标题下的块引用. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+> 这是标题下的块引用.
 
 ### 三级标题
 
@@ -58,17 +58,17 @@ sort: 1
 
 任务清单如下:
 
-[x] Create a sample markdown document
-[x] Add task lists to it
-[ ] Take a vacation
+- [x] Create a sample markdown document
+- [x] Add task lists to it
+- [ ] Take a vacation
 
-And a "mixed" task list:
+混合的任务清单如下：
 
 - [ ] Steal underpants
 - ?
 - [ ] Profit!
 
-And a nested list:
+嵌套的无序列表:
 
 - Jackson 5
   - Michael
@@ -82,7 +82,7 @@ And a nested list:
   - Donatello
   - Raphael
 
-Definition lists can be used with HTML syntax. Definition terms are bold and italic.
+也可以使用HTML语法定义列表。默认的样式为加粗和斜体。
 
 <dl>
     <dt>Name</dt>
@@ -97,7 +97,7 @@ Definition lists can be used with HTML syntax. Definition terms are bold and ita
 
 ---
 
-Tables should have bold headings and alternating shaded rows.
+表格是粗体标题，表格体行之间阴影交替。
 
 | Artist          | Album          | Year |
 | --------------- | -------------- | ---- |
@@ -105,7 +105,7 @@ Tables should have bold headings and alternating shaded rows.
 | Prince          | Purple Rain    | 1984 |
 | Beastie Boys    | License to Ill | 1986 |
 
-If a table is too wide, it should condense down and/or scroll horizontally.
+如果某一数据行过多，它应该向下换行压缩和/或水平滚动。
 
 <!-- prettier-ignore-start -->
 
@@ -119,17 +119,17 @@ If a table is too wide, it should condense down and/or scroll horizontally.
 
 ---
 
-Code snippets like `var foo = "bar";` can be shown inline.
+像代码段 `var foo = "bar";` 应该在行内输入。
 
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
+同样的，`this should vertically align` ~~`with this`~~ ~~and this~~.
 
-Code can also be shown in a block element.
+代码片段也可以放在代码块中。
 
 ```
 var foo = "bar";
 ```
 
-Code can also use syntax highlighting.
+代码段也可以使用高亮语法，标注的语言和代码匹配就可以高亮
 
 ```javascript
 var foo = "bar";
@@ -144,7 +144,7 @@ var foo =
   "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";
 ```
 
-Inline code inside table cells should still be distinguishable.
+表格单元格内的内联代码仍然可以区分。
 
 | Language   | Code               |
 | ---------- | ------------------ |
@@ -153,14 +153,10 @@ Inline code inside table cells should still be distinguishable.
 
 ---
 
-Small images should be shown at their actual size.
+小图像应该显示在他们的实际大小。
 
 ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
 
-Large images should always scale down and fit in the content container.
+大图片应该总是按比例缩小并适合内容容器。
 
 ![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-```
-This is the final element on the page and there should be no margin below this.
-```
