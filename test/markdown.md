@@ -16,33 +16,33 @@ sort: 1
 >
 > 块引用的最后不能有空行。
 
-# Header 1
+# 一级标题
 
-This is a normal paragraph following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+这是标题下的一段正常段落。Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
 
-## Header 2
+## 二级标题
 
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+> 这是标题下的块引用. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
 
-### Header 3
+### 三级标题
 
 ```
-This is a code block following a header.
+这是标题下的代码块。
 ```
 
-#### Header 4
+#### 四级标题
 
-- This is an unordered list following a header.
-- This is an unordered list following a header.
-- This is an unordered list following a header.
+- 这是无序列表项
+- 这是无序列表项
+- 这是无序列表项
 
-##### Header 5
+##### 五级标题
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
+1. 这是有序列表
+2. 这是有序列表
+3. 这是有序列表
 
-###### Header 6
+###### 六级标题
 
 | What    | Follows  |
 | ------- | -------- |
@@ -52,27 +52,15 @@ This is a code block following a header.
 
 ---
 
-There's a horizontal rule above and below this.
+水平分割线如上下
 
 ---
 
-Here is an unordered list:
+任务清单如下:
 
-- Salt-n-Pepa
-- Bel Biv DeVoe
-- Kid 'N Play
-
-And an ordered list:
-
-1. Michael Jackson
-2. Michael Bolton
-3. Michael Bublé
-
-And an unordered task list:
-
-- [x] Create a sample markdown document
-- [x] Add task lists to it
-- [ ] Take a vacation
+[x] Create a sample markdown document
+[x] Add task lists to it
+[ ] Take a vacation
 
 And a "mixed" task list:
 
