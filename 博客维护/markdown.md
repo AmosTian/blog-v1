@@ -167,7 +167,7 @@ var foo =
 
 ![Branching](https://guides.github.com/activities/hello-world/branching.png)
 
-# 卡片式提示框
+## 卡片式提示框
 
 THIS IS TOO LONG, NEED UPDATE! HERE IS SOME IDEAS:
 
@@ -208,7 +208,7 @@ Strong prose may provoke extreme mental exertion. Reader discretion is strongly 
 Mad scientist at work!
 ```
 
-# 代码块
+## 代码块
 
 `inline code`
 
@@ -239,7 +239,7 @@ Mad scientist at work!
   }
 }
 
-# Mermaid Test
+## Mermaid Test
 
     ```mermaid
     graph TB
@@ -296,7 +296,7 @@ erDiagram
     CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 ```
 
-# 表情文本
+## 表情文本
 
 ```
 I give this theme two :+1:!
@@ -308,7 +308,7 @@ I give this theme two :+1:!
 Set config `plugins: [jemoji]`, Emoji searcher, see: [https://emoji.muan.co/](https://emoji.muan.co/)
 ```
 
-# Gist Test
+## Gist Test
 
 ```
 {% raw %}{% gist c08ee0f2726fd0e3909d %}{% endraw %}
@@ -316,7 +316,7 @@ Set config `plugins: [jemoji]`, Emoji searcher, see: [https://emoji.muan.co/](ht
 
 {% gist c08ee0f2726fd0e3909d %}
 
-# 引用
+## 引用
 
 Hey @saowang, what do you think of this?
 
@@ -326,7 +326,7 @@ Set config `plugins: [jekyll-mentions]`
 For documentation, see: [https://github.com/jekyll/jekyll-mentions](https://github.com/jekyll/jekyll-mentions)
 ```
 
-# 字体
+## 字体
 
 `{:.font-mono}`
 
@@ -344,7 +344,7 @@ For documentation, see: [https://github.com/jekyll/jekyll-mentions](https://gith
 {:.font-head}
 {{ page.text }}
 
-## font-awesome
+### font-awesome
 
 ```html
 <i class="fa fa-check-circle text-green">checked</i>
@@ -355,7 +355,7 @@ For documentation, see: [https://github.com/jekyll/jekyll-mentions](https://gith
 <i class="fa fa-battery-quarter text-red">battery</i>
 ```
 
-# 数学公式
+## 数学公式
 
 $$
 \begin{aligned}
