@@ -88,7 +88,8 @@ text: |
   - Donatello
   - Raphael
 
-也可以使用HTML语法定义列表。默认的样式为加粗和斜体。
+Markdown内置了HTML解析器，可以直接使用HTML语法定义列表。
+默认的样式为加粗和斜体。
 
 <dl>
     <dt>Name</dt>
@@ -129,7 +130,7 @@ text: |
 
 同样的，`this should vertically align` ~~`with this`~~ ~~and this~~.
 
-代码片段也可以放在代码块中。
+代码片段应该放在代码块中。
 
 ```
 var foo = "bar";
@@ -139,15 +140,6 @@ var foo = "bar";
 
 ```javascript
 var foo = "bar";
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```javascript
-var foo =
-  "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";
 ```
 
 表格单元格内的内联代码仍然可以区分。
@@ -161,11 +153,11 @@ var foo =
 
 小图像应该显示在他们的实际大小。
 
-![Octocat](markdown/touxiang.png)
+![](https://github.githubassets.com/images/icons/emoji/octocat.png)
 
 大图片应该总是按比例缩小并适合内容容器。
 
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
+![Octocat](markdown.assets/touxiang.png)
 
 ## 卡片式提示框
 
@@ -299,23 +291,11 @@ erDiagram
 
 ## 表情文本
 
-```
-I give this theme two :+1:!
-```
-
 I give this theme two :+1:!
 
 ```tip
 Set config `plugins: [jemoji]`, Emoji searcher, see: [https://emoji.muan.co/](https://emoji.muan.co/)
 ```
-
-## Gist Test
-
-```
-{% raw %}{% gist c08ee0f2726fd0e3909d %}{% endraw %}
-```
-
-{% gist c08ee0f2726fd0e3909d %}
 
 ## 引用
 
@@ -354,7 +334,6 @@ For documentation, see: [https://github.com/jekyll/jekyll-mentions](https://gith
 
 <i class="fa fa-check-circle text-green">checked</i>
 <i class="fa fa-battery-quarter text-red">battery</i>
-```
 
 ## 数学公式
 
@@ -379,3 +358,62 @@ $$
 For documentation, see: https://kramdown.gettalong.org/syntax.html#math-blocks
 ```
 
+## Primer Utilities Test
+
+Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+
+
+
+{:.text-red}
+
+Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+
+
+
+{:.bg-yellow-dark}
+
+Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+
+
+
+{:.bg-yellow-dark.text-white}
+
+Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+
+
+
+{:.bg-yellow-dark.text-white.m-5}
+
+Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+
+
+
+{:.bg-yellow-dark.text-white.p-5.mb-6}
+
+Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+
+
+
+{:.bg-yellow-dark.text-white.p-5.mb-6}
+
+Text can be **bold**{:.h1}, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+
+
+
+{:.bg-yellow-dark.text-white.p-2.box-shadow-large}
+
+Text can be **bold**{:.h1}, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+
+
+
+{:.bg-yellow-dark.text-white.p-5.box-shadow-large.anim-pulse}
+
+Text can be **bold**{:.h1}, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+
+
+
+\```tip
+
+Edit this page to see how to add this to your docs, theme can use [@primer/css utilities](https://primer.style/css/utilities)
+
+\```
