@@ -1,12 +1,6 @@
 # Python(基础语法)
 @(Knowledge)[Auspice Tian][2021年1月24日20:35:58]
 
----
-
-[TOC]
-
-<div style="page-break-after:always"></div>
-
 ## 学习基础
 
 ### Windows命令行
@@ -145,8 +139,10 @@ a = 10
 4. 一行语句可多行编写，以 *\\*  结尾
 ![Alt text](python(基础语法).assets/1584018791235.png)
 5. **缩进严格**
+
 	- 表示代码块
 6. 注释
+
 	- #
 
 ### 字面量和变量

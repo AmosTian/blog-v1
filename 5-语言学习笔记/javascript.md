@@ -5,12 +5,6 @@
 > DOM：【document object model文档对象模型】 提供属性和方法，操作页面
 > BOM：【browser object model浏览器对象模型】 提供属性和方法，操作浏览器
 
----
-
-[TOC]
-
-<div style="page-break-after:always"></div>
-
 ## <一>浏览器内核
 
 ### 常用浏览器

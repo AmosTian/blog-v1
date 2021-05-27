@@ -1,12 +1,6 @@
 # C++
 @(Knowledge)[Auspice Tian][2021年1月24日19:59:46]
 
----
-
-
-
-<div style="page-break-after:always"></div>
-
 ## 绪论
 
 计算机软件

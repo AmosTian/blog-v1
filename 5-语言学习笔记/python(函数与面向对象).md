@@ -1,14 +1,6 @@
 # **Python**(函数与面向对象)
 @(Knowledge)[Auspice Tian][2021年1月24日20:50:48]
 
----
-
-[TOC]
-
----
-
-<div style="page-break-after:always"></div>
-
 ## 函数(function)
 
 > 函数也是 **对象**
@@ -767,6 +759,7 @@ class Person:
 
 #### 引用外部模块
 1. **import 模块名**
+
 	- 在多次引用同一个模块，但只包含一个实例
 2. **import 模块名 as 别名**
 
