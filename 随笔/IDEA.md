@@ -51,11 +51,11 @@ sort: 6
 
 1.  将Module与Project解除关联
 
-![image-20210204090657798](IDEA.assets/image-20210204090657798.png)
+    ![image-20210204090657798](IDEA.assets/image-20210204090657798.png)
 
 2.  删除Module
 
-![image-20210204090748373](IDEA.assets/image-20210204090748373.png)
+    ![image-20210204090748373](IDEA.assets/image-20210204090748373.png)
 
 ### 查看项目配置
 
