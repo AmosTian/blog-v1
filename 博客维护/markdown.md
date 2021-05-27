@@ -238,6 +238,7 @@ Mad scientist at work!
     }
   }
 }
+```
 
 ## Mermaid Test
 
