@@ -1,12 +1,4 @@
 # Linux
-@(Knowledge)[Auspice Tian][2021年1月24日19:37:14] 
-
------
-
-[TOC]
-
-<div style="page-break-after:always"></div>
-
 ## 操作系统
 
 - **功能**
