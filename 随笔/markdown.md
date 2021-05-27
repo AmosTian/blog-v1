@@ -364,11 +364,19 @@ Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com
 
 
 
+```
+{:.text-red} 红字
+```
+
 {:.text-red}
 
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 
 
+
+```
+{:.bg-yellow-dark} 黄底
+```
 
 {:.bg-yellow-dark}
 
@@ -376,11 +384,19 @@ Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com
 
 
 
+```
+{:.bg-yellow-dark.text-white}  黄底白字
+```
+
 {:.bg-yellow-dark.text-white}
 
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 
 
+
+```
+{:.bg-yellow-dark.text-white.m-5} 黄底 白字 外边距为5px
+```
 
 {:.bg-yellow-dark.text-white.m-5}
 
@@ -388,23 +404,39 @@ Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com
 
 
 
+```
+{:.bg-yellow-dark.text-white.p-5.mb-6}黄底 白字 内边距为5px 上下为6px
+```
+
 {:.bg-yellow-dark.text-white.p-5.mb-6}
 
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 
 
 
+```
+{:.bg-yellow-dark.text-white.p-5.mb-6} 黄底 白字 内边距为5px 上下为6px 个别字突出显示
+```
+
 {:.bg-yellow-dark.text-white.p-5.mb-6}
 
 Text can be **bold**{:.h1}, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 
 
 
+```
+{:.bg-yellow-dark.text-white.p-2.box-shadow-large}黄底 白字 内边距为2px 有阴影
+```
+
 {:.bg-yellow-dark.text-white.p-2.box-shadow-large}
 
 Text can be **bold**{:.h1}, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 
 
+
+```
+{:.bg-yellow-dark.text-white.p-5.box-shadow-large.anim-pulse}黄底白字 内边距为5px 边框阴影 自动出现
+```
 
 {:.bg-yellow-dark.text-white.p-5.box-shadow-large.anim-pulse}
 
