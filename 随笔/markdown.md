@@ -68,7 +68,7 @@ text: |
 - [x] Add task lists to it
 - [ ] Take a vacation
 
-混合的任务清单如下：
+任务清单与列表的混合如下：
 
 - [ ] Steal underpants
 - ?
@@ -299,7 +299,9 @@ Set config `plugins: [jemoji]`, Emoji searcher, see: [https://emoji.muan.co/](ht
 
 ## 引用
 
-Hey @saowang, what do you think of this?
+@ 会查找github用户名
+
+Hey @AuspiceTian, what do you think of this?
 
 ```tip
 Set config `plugins: [jekyll-mentions]`
@@ -444,8 +446,6 @@ Text can be **bold**{:.h1}, _italic_, or ~~strikethrough~~. [Links](https://gith
 
 
 
-\```tip
-
+```tip
 Edit this page to see how to add this to your docs, theme can use [@primer/css utilities](https://primer.style/css/utilities)
-
-\```
+```
