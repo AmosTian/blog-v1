@@ -125,7 +125,7 @@ text: |
 
 ---
 
-像代码段 `var foo = "bar";` 应该在行内输入。
+像代码块 `var foo = "bar";` 应该在行内输入。
 
 同样的，`this should vertically align` ~~`with this`~~ ~~and this~~.
 
@@ -161,7 +161,7 @@ var foo =
 
 小图像应该显示在他们的实际大小。
 
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
+![Octocat](markdown/touxiang.png)
 
 大图片应该总是按比例缩小并适合内容容器。
 
