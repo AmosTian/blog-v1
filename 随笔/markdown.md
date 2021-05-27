@@ -358,7 +358,7 @@ $$
 For documentation, see: https://kramdown.gettalong.org/syntax.html#math-blocks
 ```
 
-## Primer Utilities Test
+## 基本样式
 
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 
