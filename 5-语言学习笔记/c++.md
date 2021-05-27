@@ -3,7 +3,7 @@
 
 ---
 
-[TOC]
+
 
 <div style="page-break-after:always"></div>
 
@@ -1903,6 +1903,7 @@ int *pLine[3] = {line1,line2,line3};
 
 pLine[i][j] //==>*(pLine[i] + j)//=>*(*(Lines + i) + j)
 ```
+
 ```cpp
 int array[3][3] = {{11,12,13},{21,22,23},{31,32,33}};
 array[i][j] //=> *(*(array + i) + j)
