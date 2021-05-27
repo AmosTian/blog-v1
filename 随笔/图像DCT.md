@@ -27,9 +27,15 @@ sort: 4
 
 ## 正变换
 
-$F = AfA^T$
-$A(i,j) = c(i) cos[\frac{(j+0.5)\pi} {N}i]$
-$c(i)=\left\{\begin{array}{rcl}\sqrt{\frac{1}{N}}, & & {i =0}\\\sqrt{\frac{2}{N}}, & & {i\neq{0}}\\\end{array} \right.$
+$$F = AfA^T$$
+
+
+
+$$A(i,j) = c(i) cos[\frac{(j+0.5)\pi} {N}i]$$
+
+
+
+$$c(i)=\left\{\begin{array}{rcl}\sqrt{\frac{1}{N}}, & & {i =0}\\\sqrt{\frac{2}{N}}, & & {i\neq{0}}\\\end{array} \right.$$
 
 - F 位变换得到的系数
 - f为图像像素值
