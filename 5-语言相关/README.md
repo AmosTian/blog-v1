@@ -2,6 +2,6 @@
 sort: 5
 ---
 
-# 语言学习笔记
+# 语言相关
 
 {% include list.liquid all=true %}
