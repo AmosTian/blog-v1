@@ -1,4 +1,9 @@
+---
+sort: 1
+---
+
 # Python(基础语法)
+
 @(Knowledge)[Auspice Tian][2021年1月24日20:35:58]
 
 ## 学习基础

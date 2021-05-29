@@ -1,3 +1,7 @@
+---
+sort: 2
+---
+
 # **Python**(函数与面向对象)
 @(Knowledge)[Auspice Tian][2021年1月24日20:50:48]
 

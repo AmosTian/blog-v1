@@ -1257,16 +1257,16 @@ IE6~8不兼容
 ---
 
 #### 事件绑定的三种方法
->**`1.标签属性`**
->>`onclick = "JS代码"`
->
->**`2.对象属性`**
->>`object.onclick = function(event){代码}`
->
->**`3.对象方法`**
->>`添加事件：addEventListener(事件，函数，false)`
->>`移除事件：removeEventListener(事件，函数，false)`
->>false表示以冒泡的方式处理
+**`1.标签属性`**
+>`onclick = "JS代码"`
+
+**`2.对象属性`**
+>`object.onclick = function(event){代码}`
+
+**`3.对象方法`**
+>`添加事件：addEventListener(事件，函数，false)`
+>`移除事件：removeEventListener(事件，函数，false)`
+>false表示以冒泡的方式处理
 
 ### 事件冒泡的拦截
 `event.cancelBubble = true`
