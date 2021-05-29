@@ -1,8 +1,4 @@
----
-sort: 1
----
-
-# JavaSE
+# JavaSE概要
 
 ## 简介
 
