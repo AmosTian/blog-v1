@@ -4,6 +4,8 @@ sort: 1
 
 
 
+# 学习路线
+
 语言学习：掌握特性
 
 -   高阶函数 higher-order function
@@ -14,9 +16,7 @@ OO（Oriented-Object）的理解 [ShellyYuKi][https://www.bilibili.com/video/BV1
 
 class不是OO本质
 
->   messaging是OO的首要特征：Alan Kay一个世界看做是一堆独立运转的节点在相互发送和处理消息；A节点给B节点发送消息，相当于A这个object调用了B这个object的某个method
-
-http://xahlee.info/comp/Alan_Kay_on_object_oriented_programing.html
+>   messaging是OO的首要特征：Alan Kay一个世界看做是一堆独立运转的节点在相互发送和处理消息；A节点给B节点发送消息，相当于A这个object调用了B这个object的某个method.[原文地址](http://xahlee.info/comp/Alan_Kay_on_object_oriented_programing.html)
 
 messaging本质：
 
@@ -26,11 +26,11 @@ messaging本质：
 
 ‘’
 
-基于java的推荐系统：https://www.coursera.org/specializations/java-programming#courses
+[基于java的推荐系统](https://www.coursera.org/specializations/java-programming#courses)
 
-宋红康：https://www.bilibili.com/video/BV1Kb411W75N
+[宋红康](https://www.bilibili.com/video/BV1Kb411W75N)
 
-翁恺：https://www.bilibili.com/video/BV1DJ411B7cG
+[翁恺](https://www.bilibili.com/video/BV1DJ411B7cG)
 
 **java入门**
 
@@ -82,17 +82,11 @@ Java 已经入门了，你都想进阶了，建议你不要再找视频看了，
 
 ## 工具篇
 
-**IDEA**：
+:white_check_mark:[**IDEA**](https://www.bilibili.com/video/BV1PW411X75p)
 
-:white_check_mark:  https://www.bilibili.com/video/BV1PW411X75p
+:white_check_mark: [**Maven**](https://www.bilibili.com/video/BV1TW411g7hP)
 
-**Maven**：
-
-:white_check_mark: https://www.bilibili.com/video/BV1TW411g7hP
-
-**Git**:
-
-:white_check_mark:  https://www.bilibili.com/video/BV1FE411P7B3
+:white_check_mark:  [**Git**](https://www.bilibili.com/video/BV1FE411P7B3)
 
 ## 数据库篇
 
