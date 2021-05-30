@@ -782,7 +782,7 @@ export default NewAnalysis;
       },
 ```
 
-<img src="../../4-项目实战/3-好客租房项目/ReactJS.assets/image-20210308205111540.png" alt="image-20210308205111540" style="zoom:50%;" />
+<img src="2-AntD.assets/image-20210308205111540.png" alt="image-20210308205111540" style="zoom:50%;" />
 
 ### Pro中model执行流程
 
@@ -790,7 +790,7 @@ export default NewAnalysis;
 
 #### 路由即菜单
 
-<img src="../../4-项目实战/3-好客租房项目/ReactJS.assets/image-20210308210729464.png" alt="image-20210308210729464" style="zoom:67%;" />
+<img src="2-AntD.assets/image-20210308210729464.png" alt="image-20210308210729464" style="zoom:67%;" />
 
 ![image-20210308215053084](2-AntD.assets/image-20210308215053084.png)
 
@@ -1055,9 +1055,9 @@ handleSubmit = e => {
 
 **效果**
 
-![image-20210310212337082](2-AntD.assets/image-20210310212337082.png)
+<img src="2-AntD.assets/image-20210310212337082.png" alt="image-20210310212337082" style="zoom:67%;" />
 
-![image-20210310212348756](2-AntD.assets/image-20210310212348756.png)
+<img src="2-AntD.assets/image-20210310212348756.png" alt="image-20210310212348756" style="zoom: 67%;" />
 
 **实现**
 
