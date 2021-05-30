@@ -962,7 +962,7 @@ SLF4J可以由Log4j,logback实现，也可以通过适配层，将其他实现�
 
 不同层使用不同的日志框架，通过适配层统一转化为SLF4J框架
 
-![click to enlarge](http://www.slf4j.org/images/legacy.png)
+![click to enlarge](4-SpringBoot.assets/legacy.png)
 
 1.  将系统中其他日志框架先排除出去
 2.  用中间包替换原有日志框架
@@ -974,7 +974,7 @@ SLF4J可以由Log4j,logback实现，也可以通过适配层，将其他实现�
 
 根据SLF4J的日志适配图，进行相关切换
 
-![click to enlarge](http://www.slf4j.org/images/legacy.png)
+![click to enlarge](4-SpringBoot.assets/legacy.png)
 
 ![image-20210226104919822](SpringBoot.assets/image-20210226104919822.png)
 
@@ -1108,7 +1108,7 @@ logging.level.com.xq.tmall.dao = debug
 
 >    带spring后缀的可以使用 `<springProfile >` 这个标签来指定环境
 
-**根节点<configuration>包含的属性**
+**根节点\<configuration\>包含的属性**
 
 日志级别从低到高分为TRACE < DEBUG < INFO < WARN < ERROR < FATAL，如果设置为WARN，则低于WARN的信息都不会输出
 
@@ -1117,11 +1117,11 @@ logging.level.com.xq.tmall.dao = debug
 -   scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。
 -   debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。
 
-<!--
-    总体说明：根节点下有2个属性，三个节点
-    属性： contextName 上下文名称； property 设置变量
-    节点： appender,  root， logger
--->
+```
+总体说明：根节点下有2个属性，三个节点
+属性： contextName 上下文名称； property 设置变量
+节点： appender,  root， logger
+```
 
 #####  `<root>`
 
@@ -1171,14 +1171,17 @@ root节点是必选节点，用来指定最基础的日志输出级别，只有�
 
 都可以将事件转换为格式化后的日志记录，但是控制台输出使用`layout`，文件输出使用`encoder`
 
-<encoder>表示对日志进行编码：
+`<encoder>`表示对日志进行编码：
 
+```
 %d{HH: mm:ss.SSS}——日志输出时间
 %thread——输出日志的进程名字，这在Web应用以及异步任务处理中很有用
 %-5level——日志级别，并且使用5个字符靠左对齐
 %logger{36}——日志输出者的名字
 %msg——日志消息
 %n——平台的换行符
+```
+
 ThresholdFilter为系统定义的拦截器，例如我们用ThresholdFilter来过滤掉ERROR级别以下的日志不输出到文件中。如果不用记得注释掉，不然你控制台会发现没日志~
 
 ###### 输出到文件 `RollingFileAppender`
