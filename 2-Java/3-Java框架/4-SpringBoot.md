@@ -561,7 +561,7 @@ person:
     age: 3
 ```
 
-##### @ConfigurationProperties
+#### @ConfigurationProperties
 
 `@ConfigurationProperties(prefix=)`将本类的属性与配置文件中的相关配置绑定
 
@@ -587,7 +587,7 @@ public class Person {
 
 ![image-20210223163436025](SpringBoot.assets/image-20210223163436025.png)
 
-##### @PropertySource
+#### @PropertySource
 
 `@PropertySource("classpath:myconfig.xml")`加载指定的配置文件
 
@@ -620,7 +620,9 @@ public class Person {
 }
 ```
 
-#### @ConfigurationProperties&@Value
+#### 区别
+
+`@ConfigurationProperties` 与 `@Value`
 
 |                    | @ConfigurationProperties       | @Value     |                      |
 | ------------------ | ------------------------------ | ---------- | -------------------- |
@@ -791,7 +793,9 @@ java -jar [打包后包名] --spring.profiles.active=dev
 
 ![image-20210223192432319](SpringBoot.assets/image-20210223192432319.png)
 
-### ==application.yml能配置什么\==>自动装配全过程==
+### ==自动装配全过程==
+
+>   application.yml能配置什么\==>
 
 #### 1. 什么会被自动装配
 
