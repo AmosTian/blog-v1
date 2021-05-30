@@ -561,7 +561,7 @@ person:
     age: 3
 ```
 
-#### @ConfigurationProperties
+#### `@ConfigurationProperties`
 
 `@ConfigurationProperties(prefix=)`将本类的属性与配置文件中的相关配置绑定
 
@@ -587,7 +587,7 @@ public class Person {
 
 ![image-20210223163436025](SpringBoot.assets/image-20210223163436025.png)
 
-#### @PropertySource
+#### `@PropertySource`
 
 `@PropertySource("classpath:myconfig.xml")`加载指定的配置文件
 
@@ -722,11 +722,11 @@ springjava -jar [打包后包名] --spring.config.location=F:/application.proper
 
 ### 其他配置文件的加载
 
-#### @PropertySource(value={"",""})
+#### `@PropertySource(value={"",""})`
 
 ==>读取指定的配置文件
 
-#### @ImportResource(location={"",""})
+#### `@ImportResource(location={"",""})`
 
 ==>在一个配置类上标注，导入Spring配置文件，让其生效
 
