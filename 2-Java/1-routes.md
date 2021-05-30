@@ -12,7 +12,7 @@ sort: 1
 -   静态类型检查：static-type checking
 -   类型推导： type inference
 
-OO（Oriented-Object）的理解 [ShellyYuKi][https://www.bilibili.com/video/BV1c54y1U7pp]提到的
+OO（Oriented-Object）的理解 [ShellyYuKi](https://www.bilibili.com/video/BV1c54y1U7pp)提到的
 
 class不是OO本质
 
