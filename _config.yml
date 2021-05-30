@@ -1,7 +1,9 @@
 title: AuspiceTian
 description: 学习记录
 
-theme: jekyll-rtd-theme
+theme: jekyll-theme-architect
+
+# jekyll-rtd-theme
 
 # debug:
 #   compress: true
