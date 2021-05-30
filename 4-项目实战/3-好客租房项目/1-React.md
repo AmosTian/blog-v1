@@ -1587,5 +1587,5 @@ model 分两类，一是全局 model，二是页面 model。全局 model 存于 
 
 ## AntD后台前端
 
-[见前端模板](../1-前端模板/2-AntD.md#haoke)
+[AndtPro应用](../1-前端模板/2-AntD.md#haoke)
 
