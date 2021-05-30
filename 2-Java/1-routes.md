@@ -26,13 +26,13 @@ messaging本质：
 
 ‘’
 
-[基于java的推荐系统](https://www.coursera.org/specializations/java-programming#courses)
+[基于Java的推荐系统](https://www.coursera.org/specializations/Java-programming#courses)
 
 [宋红康](https://www.bilibili.com/video/BV1Kb411W75N)
 
 [翁恺](https://www.bilibili.com/video/BV1DJ411B7cG)
 
-**java入门**
+**Java入门**
 
 -   面向过程 VS 面向对象
 -   面向对象基本特征：封装、继承、多态
@@ -74,7 +74,7 @@ Java 已经入门了，你都想进阶了，建议你不要再找视频看了，
 
 《Java 并发编程的艺术》
 
->   这是一本专门讲解Java并发的书，涉及到各种锁、常见安全的集合类，基本就是将 JUC（java.util.concurrent包的简称）里所有的内容覆盖了一遍，看完你一定有收获。强烈推荐！
+>   这是一本专门讲解Java并发的书，涉及到各种锁、常见安全的集合类，基本就是将 JUC（Java.util.concurrent包的简称）里所有的内容覆盖了一遍，看完你一定有收获。强烈推荐！
 
 ·《并发编程实践》
 
