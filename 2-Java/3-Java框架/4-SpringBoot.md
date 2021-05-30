@@ -1190,7 +1190,7 @@ ThresholdFilter为系统定义的拦截器，例如我们用ThresholdFilter来�
 
 ##### `<loger>`
 
-<loger>用来设置某一个包或者具体的某一个类的日志打印级别、以及指定<appender>。
+`<loger>`用来设置某一个包或者具体的某一个类的日志打印级别、以及指定<appender>。
 
 -   name:用来指定受此loger约束的某一个包或者具体的某一个类。
 
