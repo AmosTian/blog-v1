@@ -427,7 +427,43 @@ docker run --name myMysqlName -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag -
 --指定参数
 ```
 
+## docker——percona
 
+[官网链接](https://hub.docker.com/_/percona/)
+
+Percona 为 MySQL 数据库服务器进行了改进，在功能和性能上较 MySQL 有着很显著的提升。该版本提升了在高负载情况下的 InnoDB 的性能、为 DBA 提供一些非常有用的性能诊断工具；另外有更多的参数和命令来控制服务器行为。
+
+Percona Server 只包含 MySQL 的服务器版，并没有提供相应对 MySQL 的 Connector 和 GUI 工具进行改进。
+Percona Server 使用了一些 google-mysql-tools, Proven Scaling, Open Query 对 MySQL 进行改造。
+
+### 安装部署
+
+```shell
+# 拉取镜像
+docker pull percona:8.0.22-13
+
+#创建容器
+docker run --name percona -v /data/mysql-data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d percona:8.0.22-13
+
+# 参数解释
+--name	:	percona				   指定容器名
+-v		:	[主机目录]:[容器目录]	 将 主机目录 挂在到容器目录上
+-p		:	[主机端口]:[容器内部端口]	设置端口映射
+-e		:	MYSQL_ROOT_PASSWORD=   设置容器参数，将root用户密码为root
+percona:8.0.22-13	:	镜像名:版本
+
+# 启动容器
+docker start percona
+
+# 解决没有权限闪退问题
+chmod -R 777 /data 
+```
+
+![image-20210314200457516](4-docker.assets/image-20210314200457516.png)
+
+测试:
+
+![image-20210314201157658](4-docker.assets/image-20210314201157658.png)
 
 
 
