@@ -305,7 +305,7 @@ public class MyBatisUtils {
     // 1.获取SqlSessionFactory对象
     static{
         try {
-            //1. 将资源中的配置文件以留的形式读入
+            //1. 将资源中的配置文件以流的形式读入
             String resource = "mybatis-config.xml";
             InputStream configuration = Resources.getResourceAsStream(resource);
 
