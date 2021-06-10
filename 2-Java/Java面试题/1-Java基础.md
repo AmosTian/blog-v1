@@ -42,12 +42,43 @@ sort: 1
 
 1.  封装：封装把一个对象的属性私有化，同时提供 `getter` 和 `setter` 方法访问这些属性。
 
-2.  继承：继承是在现有类的定义基础上建立新类的，新类的定义可以增加新的数据或新的功能，也可以用父类功能，但不能选择性继承父类。**通过继承可以实现代码复用**。
+    封装可以隐藏实现细节，使代码模块化。
+
+2.  继承：继承是在现有类的定义基础上建立新类的，新类的定义可以增加新的数据或新的功能，也可以用父类功能，但不能选择性继承父类。**继承可以扩展已存在的代码块，实现代码复用**
     -   子类拥有父类的所有属性和方法，包括私有属性和私有方法，但是父类中的私有属性和方法子类是无法访问的
     -   子类可以拥有自己的属性和方法，即子类可以对父类进行扩展
     -   子类可以用自己的方式实现父类的方法
 
-3.  多态：程序中定义的**引用变量**所指向的具体类型和通过该引用变量发出的方法调用在编程时并不确定，而是在程序运行期间才确定。
+3.  多态：同一操作作用于不同的对象，可以有不同的执行结果
+
+##### 多态的实现方式
+
+**编译时多态（静态多态）**
+
+重载是编译时多态，编译时多态在编译时就确定，运行时调用的是确定的方法
+
+**运行时多态（动态多态）**
+
+>   The primary usage of polymorphism in industry (object-oriented programming theory) is the ability of objects belonging to different types to respond to method, field, or property calls of the same name, each one according to an appropriate type-specific behavior.
+
+对父类方法的改写或对接口方法的实现，达到运行时的不同执行效果。
+
+多态的使用：声明的总是父类类型或接口类型，创建的是实际类型
+
+如：
+
+```java
+//正确
+List list = new ArrayList();
+
+//错误
+ArrayList list = new ArrayList();
+```
+
+增加了代码的灵活性。加入ArrayList无法满足需求，改为LinkedList，只需要改变为 `new LinkedList` 即可。其他代码不需要改动。
+
+1.  子类继承父类(extends)
+2.  类实现接口(implements)
 
 >   Java中，实现多态的两种形式：**继承**（多个类对同一方法的重写）和 **接口**（实现接口并覆盖接口的同一方法）
 >
@@ -144,13 +175,13 @@ sort: 1
 
 ##### 语法上
 
--   所属：成员变量属于类；局部变量是在方法中定义的变量或者方法的参数
+-   归属：成员变量属于类；局部变量是在方法中定义的变量或者方法的参数
 
 -   访问权限：成员变量可以被访问控制修饰符 `public` 、`private`  、`static` 等修饰
 
     局部变量不能被访问控制修饰符修饰
 
-    二者都能被 `finale` 修饰
+    二者都能被 `final` 修饰
 
 ##### 生命周期
 
@@ -250,7 +281,7 @@ new 运算符创建实例（对象实例在堆内存中），对象引用指向�
 
 #### 没有构造方法的类可以正确执行吗
 
-构造方法完成对类对象的初始化工作。类中有默认的不带参数的构造方法，所以可以正确执行
+构造方法完成对类对象的初始化工作。类中有默认的不带参数的构造方法，所以可以正确执行。
 
 ##### Java中无参构造器的作用
 
@@ -262,28 +293,18 @@ Java程序在执行子类的构造方法之前，如果没有使用 `super()` �
 
 ### 数据类型相关
 
-#### 字符型常量和字符串常量的区别
-
-1.  形式上：字符常量是单引号引起的一个字符；字符串常量是双引号引起的若干字符
-
-2.  含义上：字符常量相当于一个整数值(ASCII值)，可以参加表达式运算；字符串常量代表一个地址值（该字符串在内存中的位置）
-
-3.  存储上：字符常量只占2个字节；字符串常量占用若干字节。
-
-    >     char在Java中占用两个字节
-
 #### 八种基本数据类型
 
 | 基本类型 | 大小  | 最小值    | 最大值             | 包装器类型  |
 | -------- | ----- | --------- | ------------------ | ----------- |
-| boolean  | -     | -         | -                  | Boolean     |
-| char     | 2字节 | Unicode 0 | Unicode $2^{16}-1$ | _Character_ |
 | byte     | 1字节 | -128      | +127               | Byte        |
+| char     | 2字节 | Unicode 0 | Unicode $2^{16}-1$ | _Character_ |
 | short    | 2字节 | $-2^{15}$ | $+2^{15}-1$        | Short       |
 | int      | 4字节 | $-2^{31}$ | $+2^{31}-1$        | _Integer_   |
 | long     | 8字节 | $-2^{63}$ | $+2^{63}-1$        | Long        |
 | float    | 4字节 | IEEE754   | IEEE754            | Float       |
-| Double   | 8字节 | IEEE754   | IEEE754            | Double      |
+| double   | 8字节 | IEEE754   | IEEE754            | Double      |
+| boolean  | -     | -         | -                  | Boolean     |
 | void     | -     | -         | -                  | Void        |
 
 #### 引用数据类型
@@ -555,8 +576,8 @@ abstract class AbstractStringBuilder implements Appendable, CharSequence {
 
 #### JDK和JRE
 
--   JDK是 Java Development Kit，Java开发开发工具包。拥有JRE拥有的一切，还有编译器(javac)和工具(javadoc和jdb)。**能够创建和编译程序**
 -   JRE是Java运行时环境：运行已编译Java程序所需的所有内容的集合，包括Java虚拟机(JVM)，Java类库，Java命令和一些其他基础构件。但不能用于创建新程序。
+-   JDK(Java Development Kit)，Java开发工具包。拥有JRE拥有的一切，还有编译器(javac)和工具(javadoc和jdb)。**能够创建和编译程序** 。
 
 >   如果只运行Java程序，只需要安装JRE即可。如果需要运行一些Java编程方面的工作，需要安装JDK。
 >
@@ -620,7 +641,7 @@ Java虚拟机(JVM)是运行Java字节码（就是.class文件）的虚拟机。J
 
 ##### Set
 
--   `HashSet` (无序，唯一) : 基于 `HashMap` 实现，底层采用 `HashMap` 保存元素
+-   `HashSet` (无序，唯一) : `Set` 接口的主要实现类，底层采用 `HashMap` 保存元素
 -   `LinkedHashSet` : 是 `HashSet` 的子类，并且其内部通过 `LinkedHashMap` 实现。
 -   `TreeSet` （有序，唯一）: 红黑树（自平衡的排序二叉树） 
 
@@ -669,7 +690,7 @@ LinkedHashMap 在此基础上，增加了双向链表，使得上述结构可以
 
 1.  线程安全：都不保证线程安全
 
-2.  底层数据结构：ArrayList是Object数组  `Object[]` ,LinkedList 采用双向链表
+2.  底层数据结构：ArrayList是对象数组  `Object[]` ,LinkedList 采用双向链表
 
 3.  内存占用：ArrayList 在 list 列表结尾会预留一定的容量，LinkedList的空间花费体现在每个元素占用更多空间（存直接前驱和后继）
 
@@ -726,7 +747,7 @@ LinkedHashMap 在此基础上，增加了双向链表，使得上述结构可以
 
         `Hashtable` 默认的初始化大小为11，之后每次扩容，容量变为2n+1
 
-        `HashMap` 默认的初始化大小为16，之后每次扩容，容量变为原来2倍
+        `HashMap` 默认的初始化大小为 **16**，之后每次扩容，容量变为原来2倍
 
     -   创建时有初始值
 
@@ -740,8 +761,8 @@ LinkedHashMap 在此基础上，增加了双向链表，使得上述结构可以
 
 1.  底层数据结构
 
-    -   `ConcurrentHashMap` ：JDK1.7底层采用 **分段数组+链表** 实现。JDK1.8采用 **数组+链表/红黑树**
     -   `HashTable` 采用 **数组+链表** 的形式，数组是HashMap的主体，链表是为了解决哈希冲突而存在。
+    -   `ConcurrentHashMap` ：JDK1.7底层采用 **分段数组+链表** 实现。JDK1.8采用 **数组+链表/红黑树** 。
 
 2.  实现线程安全的方式
 
@@ -749,18 +770,18 @@ LinkedHashMap 在此基础上，增加了双向链表，使得上述结构可以
 
         JDK1.7：对整个桶数组进行了分割分段(`Segment`)，每一把锁只锁容器中的一部分数据，多线程访问容器里不同数据段的数据，就不会存在锁竞争，提高并发效率。
 
-        JDK1.8：抛弃 `Segment` 概念，采用用 `Node` 数组+链表+红黑树的数据结构实现，并发控制使用 `Synchronied` 和 CAS操作
+        JDK1.8：抛弃 `Segment` 概念，采用 `Node` 数组+链表+红黑树的数据结构实现，并发控制使用 `Synchronied` 和 CAS操作
 
-        `synchronized` 只锁定当前链表或红⿊⼆叉树的⾸节点，这样只要 hash 不冲突，就不会产⽣并
-    发，效率⼜提升 N 倍  
+        `synchronized` 只锁定当前链表或红⿊⼆叉树的⾸节点，这样只要 hash 不冲突，就不会产⽣并发，效率⼜提升 N 倍
     
--   `HashTable`：同一把锁
+    -   `HashTable`：同一把锁
     
-    使用 `synchronized` 来保证线程安全，效率低下。当一个线程访问同步方法时，其他线程也访问同步方法，可能会进入阻塞或者轮询状态。
+        使用 `synchronized` 来保证线程安全，效率低下。当一个线程访问同步方法时，其他线程也访问同步方法，可能会进入阻塞或者轮询状态。
     
-    如使用 put 添加元素，另一个线程就不能使用put添加元素，也不能使用get，竞争会越来越激烈，效率越来越低。
+        如使用 put 添加元素，另一个线程就不能使用put添加元素，也不能使用get，竞争会越来越激烈，效率越来越低。
     
-    [参考链接](http://www.cnblogs.com/chengxiao/p/6842045.html )
+
+[参考链接](http://www.cnblogs.com/chengxiao/p/6842045.html )
 
 <img src="1-Java基础.assets/image-20210603135559227.png" alt="image-20210603135559227" style="zoom:67%;" />
 
@@ -772,9 +793,37 @@ LinkedHashMap 在此基础上，增加了双向链表，使得上述结构可以
 
 
 
+### Set集合
 
+#### HashSet、LinkedHashSet和TreeSet三者区别
 
+`HashSet` 是 `Set` 接口的主要实现类，`HashSet` 的底层是 `HashMap` ，线程不安全，可以存储null值。
 
+`LinkedHashSet` 是 `HashSet` 的子类，能够按照添加的顺序遍历。
+
+`TreeSet` 底层使用红黑树，能够按照添加元素的顺序遍历，排序方式有自然排序和定制排序。
+
+#### HashMap和HashSet区别
+
+`HashSet` 底层是基于 `HashMap` 实现的。除非自己不得不实现，其他方法都是直接调用 `HashMap` 中的方法。
+
+| HashMap                      | HashSet                                                      |
+| ---------------------------- | ------------------------------------------------------------ |
+| 实现了 `Map` 接口            | 实现了 `Set` 接口                                            |
+| 存储键值对                   | 仅存储对象                                                   |
+| 调用 `put()` 向map中添加元素 | 调用 `add()` 方法向 `Set` 中添加元素                         |
+| 使用键(key) 计算 `hashcode`  | HashSet使用成员对象计算 `hashcode` 值，对于两个对象来说， `hashcode` 可能相同，所以 `equaals()` 方法用来判断对象的相等性 |
+
+#### HashSet如何检查重复
+
+>   `hashCode()` 和 `equals` 的相关规定
+
+1.  两个对象有相同的 `hashcode` 值，他们不一定是相等的
+2.  `hashCode()` 默认的行为是对堆上的对象产生独特值。如果没有重写过 `hashCode()` ,则该类的两个对象无论如何都不会相等。
+3.  如果两个对象相等(值相等)，则 `hashcode` 一定相同，`equals()` 方法返回的是 true
+4.  综上， `equals()` 被覆盖过，则 `hashCode()` 也必须被覆盖
+
+当把对象加入 `HashSet` 时，`HashSet` 会先计算对象的 `hashcode` 值来判断对象加入的位置，同时会与已经加入元素的 `hashcode` 值比较。如果没有相符的 `hashcode` ，`HashSet` 会假设对象没有重复出现。如果发现有相同的 `hashcode` ，则会调用 `equals()` 方法来检查 `hashcode` 相等的对象真的相同。如果两者相同，则不会加入。
 
 
 

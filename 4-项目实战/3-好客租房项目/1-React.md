@@ -1585,7 +1585,7 @@ model 分两类，一是全局 model，二是页面 model。全局 model 存于 
 -   page model 会向上查找，比如 page js 为 `pages/a/b.js`，他的 page model 为 `pages/a/b/models/**/*.js` + `pages/a/models/**/*.js`，依次类推
 -   约定 model.js 为单文件 model，解决只有一个 model 时不需要建 models 目录的问题，有 model.js 则不去找 `models/**/*.js`
 
-## AntD后台前端
+## AntDesign后台前端
 
-[AndtPro应用](../1-前端模板/2-AntD.md#haoke)
+[AntdesignPro应用](../1-前端模板/2-AntD.md#haoke)
 
