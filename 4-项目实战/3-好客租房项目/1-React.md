@@ -4,6 +4,13 @@ sort: 1
 
 # ReactJS
 
+-   ES6新特性
+-   ReactJS
+-   AntdesignPro后台管理系统
+-   nodejs模拟后端
+-   后端提供mock数据
+-   Semantic-UI前台
+
 ## ES6新特性
 
 ES6，是ECMAScript 6的简称,JavaScript 的下一代标准，2015 年发布。目标是使JavaScript可用于编写复杂的大型应用程序，称为企业级开发语言。
@@ -1589,3 +1596,320 @@ model 分两类，一是全局 model，二是页面 model。全局 model 存于 
 
 [AntdesignPro应用](../1-前端模板/2-AntD.md#haoke)
 
+## 前台
+
+前端是使用React+semantic-ui实现移动端web展示，后期可以将web打包成app进行发布
+
+### 1. 搭建工程
+
+```shell
+npm install # 安装依赖
+npm start # 启动服务
+```
+
+地址：http://localhost:9000/  
+
+<img src="1-React.assets/image-20210323222323226.png" alt="image-20210323222323226" style="zoom: 50%;" />
+
+### 2. 搭建api工程
+
+使用node.js开发服务端的方式进行了demo化开发，只是作为前端开发的api工程，并不是实际环境
+
+1.  创建数据库
+
+    将 myhome.sql执行 ，创建数据库
+
+2.  修改配置文件——数据库配置
+
+    ```json
+    /** 数据库配置 */
+    db: {
+        /** 模型文件路径 */
+        models_path: '/models',
+        /** 数据库主机IP */
+        host: '8.140.130.91',
+        /** 数据库的端口号 */
+        port: 3306,
+        /** 数据库类型 */
+        type: 'mysql',
+        /** 数据库登录用户名 */
+        username: 'root',
+        /** 数据库密码 */
+        password: 'root',
+        /** 数据库名称 */
+        database: 'myhome',
+        /** 是否显示数据库日志 */
+        logging: console.log,// false 为禁用日志
+        /** 配置数据库连接池 */
+        pool: {
+            max: 5,
+            min: 0,
+            charset: 'utf8',
+            idle: 30000
+        }
+    }
+    ```
+
+3.  输入命令进行初始化和启动服务
+
+    ```shell
+    npm install #安装依赖
+    npm run dev #启动dev脚本
+    
+    #脚本如下
+    "scripts": {
+        "test": "cross-env NODE_ENV=config-test node app.js",
+        "dev": "cross-env NODE_ENV=config-dev node app.js", #设置环境变量
+        "pro": "cross-env NODE_ENV=config-pro node app.js"
+    }
+    ```
+
+4.  登录系统测试
+
+    **问题**
+
+    -   Client does not support authentication protocol requested by server; conside
+
+        ```shell
+        use mysql;
+        
+        flush privileges;
+        
+        -- 加密算法为caching_sha2_password，而旧版加密算法为mysql_native_password
+        select user,host,plugin from user; 
+        
+        alter user 'root'@'%' identified with mysql_native_password by 'root';
+        
+        select user,host,plugin from user;
+        ```
+
+    -   ER_WRONG_FIELD_WITH_GROUP
+
+        ```sql
+        use myhome;
+        
+        SET sql_mode=(SELECT REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', ''));
+        
+        select @@sql_mode;
+        ```
+
+![image-20210324120933746](1-React.assets/image-20210324120933746.png)
+
+<img src="../../../doc/myPDF/好客租房/3. graphql/前台.assets/image-20210324121216250.png" alt="image-20210324121216250" style="zoom:67%;" />
+
+### 3. 前台实现分析
+
+#### React APP目录结构
+
+<img src="1-React.assets/image-20210324154457849.png" alt="image-20210324154457849" style="zoom:67%;" />
+
+#### 加载数据流程
+
+![image-20210324161006568](1-React.assets/image-20210324161006568.png)
+
+-   Promise.all()方法获取到所有的异步处理的结果，并且将结果保存到this.state中，然后再render中渲染
+
+-   app.js
+
+    ```js
+    //设置全局的  axios baseUrl 配置
+    axios.defaults.baseURL = config.apiBaseUrl;
+    //设置拦截器
+    axios.interceptors.request.use(function (config) {
+      //在发送请求前获取mytoken的值
+      if(!config.url.endsWith('/login')){
+        config.headers.Authorization = localStorage.getItem('mytoken');
+      }
+      return config;
+    }, function (error) {
+      //获取数据失败处理
+      return Promise.reject(error);
+    });
+    axios.interceptors.response.use(function (response) {
+      // 对响应的拦截——————返回response.data数据
+      return response.data;
+    }, function (error) {
+      return Promise.reject(error);
+    });
+    ```
+
+## 伪mock服务
+
+目标：所有的数据通过自己实现的接口提供，不需要使用nodejs，便于后端开发
+
+### 1. 构造数据
+
+==mock-data.properties==
+
+```properties
+mock.indexMenu={"data":{"list":[\
+  {"id":1,"menu_name":"二手房","menu_logo":"home","menu_path":"/home","menu_status":1,"menu_style":null},\
+  {"id":2,"menu_name":"新房","menu_logo":null,"menu_path":null,"menu_status":null,"menu_style":null},\
+  {"id":3,"menu_name":"租房","menu_logo":null,"menu_path":null,"menu_status":null,"menu_style":null},\
+  {"id":4,"menu_name":"海外","menu_logo":null,"menu_path":null,"menu_status":null,"menu_style":null},\
+  {"id":5,"menu_name":"地图找房","menu_logo":null,"menu_path":null,"menu_status":null,"menu_style":null},\
+  {"id":6,"menu_name":"查公交","menu_logo":null,"menu_path":null,"menu_status":null,"menu_style":null},\
+  {"id":7,"menu_name":"计算器","menu_logo":null,"menu_path":null,"menu_status":null,"menu_style":null},\
+  {"id":8,"menu_name":"问答","menu_logo":null,"menu_path":null,"menu_status":null,"menu_style":null}]},"meta":\
+  {"status":200,"msg":"测试数据"}}
+
+mock.indexInfo={"data":{"list":[\
+  {"id":1,"info_title":"房企半年销售业绩继","info_thumb":null,"info_time":null,"info_content":null,"user_id":null,"info_status":null,"info_type":1},\
+  {"id":2,"info_title":"上半年土地市场两重天：一线降温三四线量价齐升","info_thumb":null,"info_time":null,"info_content":null,"user_id":null,"info_status":null,"info_type":1}]},\
+  "meta":{"status":200,"msg":"测试数据"}}
+
+mock.indexFaq={"data":{"list":[\
+  {"question_name":"在北京买房，需要支付的税费有哪些？","question_tag":"学区,海淀","answer_content":"各种费用","atime":33,"question_id":1,"qnum":2},\
+  {"question_name":"一般首付之后，贷款多久可以下来？","question_tag":"学区,昌平","answer_content":"大概1个月","atime":22,"question_id":2,"qnum":2}]},\
+  "meta":{"status":200,"msg":"测试数据"}}
+
+mock.indexHouse={"data":{"list":[\
+  {"id":1,"home_name":"安贞西里123","home_price":"4511","home_desc":"72.32㎡/南 北/低楼层","home_infos":null,"home_type":1,"home_tags":"海淀,昌平","home_address":null,"user_id":null,"home_status":null,"home_time":12,"group_id":1},\
+  {"id":8,"home_name":"安贞西里 三室一厅","home_price":"4500","home_desc":"72.32㎡/南北/低楼层","home_infos":null,"home_type":1,"home_tags":"海淀","home_address":null,"user_id":null,"home_status":null,"home_time":23,"group_id":2},\
+  {"id":3,"home_name":"安贞西里 三室一厅","home_price":"4220","home_desc":"72.32㎡/南北/低楼层","home_infos":null,"home_type":2,"home_tags":"海淀","home_address":null,"user_id":null,"home_status":null,"home_time":1,"group_id":1},\
+  {"id":4,"home_name":"安贞西里 三室一厅","home_price":"4500","home_desc":"72.32㎡/南 北/低楼层","home_infos":"4500","home_type":2,"home_tags":"海淀","home_address":"","user_id":null,"home_status":null,"home_time":12,"group_id":2},\
+  {"id":5,"home_name":"安贞西里 三室一厅","home_price":"4522","home_desc":"72.32㎡/南 北/低楼层","home_infos":null,"home_type":3,"home_tags":"海淀","home_address":null,"user_id":null,"home_status":null,"home_time":23,"group_id":1},\
+  {"id":6,"home_name":"安贞西里 三室一厅","home_price":"4500","home_desc":"72.32㎡/南北/低楼层","home_infos":null,"home_type":3,"home_tags":"海淀","home_address":null,"user_id":null,"home_status":null,"home_time":1221,"group_id":2},\
+  {"id":9,"home_name":"安贞西里 三室一厅","home_price":"4500","home_desc":"72.32㎡/南北/低楼层","home_infos":null,"home_type":4,"home_tags":"海淀","home_address":null,"user_id":null,"home_status":null,"home_time":23,"group_id":1}\
+  ]},
+"meta":{"status":200,"msg":"测试数据"}}
+
+mock.infosList1={"data":{"list":{"total":8,"data":[{"id":13,"info_title":"wwwwwwwwwwwww","info_thumb":null,"info_time":null,"info_content":null,"user_id":null,"info_status":null,"info_type":1},{"id":12,"info_title":"房企半年销售业绩继","info_thumb":null,"info_time":null,"info_content":null,"user_id":null,"info_status":null,"info_type":1}]}},"meta":{"status":200,"msg":"获取数据成功"}}
+mock.infosList2={"data":{"list":{"total":4,"data":[{"id":9,"info_title":"房企半年销售业绩继续冲高三巨头销售额过亿","info_thumb":null,"info_time":null,"info_content":null,"user_id":null,"info_status":null,"info_type":2},{"id":7,"info_title":"房企半年销售业绩继续冲高三巨头销售额过亿","info_thumb":null,"info_time":null,"info_content":null,"user_id":null,"info_status":null,"info_type":2}]}},"meta":{"status":200,"msg":"获取数据成功"}}
+mock.infosList3={"data":{"list":{"total":10,"data":[{"username":"tom","question_name":"在北京买房，需要支付的税费有哪些？","question_tag":"学区,海淀","answer_content":"各种费用","atime":33,"question_id":1,"qnum":2},{"username":"tom","question_name":"一般首付之后，贷款多久可以下来？","question_tag":"学区,昌平","answer_content":"大概1个月","atime":22,"question_id":2,"qnum":2}]}},"meta":{"status":200,"msg":"获取数据成功"}}
+
+mock.my={"data":{"id":1,"username":"tom","password":"123","mobile":"123","type":null,"status":null,"avatar":"public/icon.png"},"meta":{"status":200,"msg":"获取数据成功"}}
+```
+
+### 2. 创建MockConfig
+
+>   读取properties文件，映射为String
+
+```java
+package com.haoke.api.config;
+
+import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+@PropertySource("classpath:mock-data.properties")
+@ConfigurationProperties(prefix = "mock")
+@Configuration
+@Data
+public class MockConfig {
+    private String indexMenu;
+    private String indexInfo;
+    private String indexFaq;
+    private String indexHouse;
+    private String infosList1;
+    private String infosList2;
+    private String infosList3;
+    private String my;
+}
+```
+
+### 3. MockController
+
+```java
+package com.haoke.api.controller;
+
+import com.haoke.api.config.MockConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RequestMapping("mock")
+@RestController
+@CrossOrigin
+public class MockController {
+
+    @Autowired
+    private MockConfig mockConfig;
+
+    /**
+     * 菜单
+     *
+     * @return
+     */
+    @GetMapping("index/menu")
+    public String indexMenu() {
+        return this.mockConfig.getIndexMenu();
+    }
+
+    /**
+     * 首页资讯
+     * @return
+     */
+    @GetMapping("index/info")
+    public String indexInfo() {
+        return this.mockConfig.getIndexInfo();
+    }
+
+    /**
+     * 首页问答
+     * @return
+     */
+    @GetMapping("index/faq")
+    public String indexFaq() {
+        return this.mockConfig.getIndexFaq();
+    }
+
+    /**
+     * 首页房源信息
+     * @return
+     */
+    @GetMapping("index/house")
+    public String indexHouse() {
+        return this.mockConfig.getIndexHouse();
+    }
+
+    /**
+     * 查询资讯
+     *
+     * @param type
+     * @return
+     */
+    @GetMapping("infos/list")
+    public String infosList(@RequestParam("type")Integer type) {
+        switch (type){
+            case 1:
+                return this.mockConfig.getInfosList1();
+            case 2:
+                return this.mockConfig.getInfosList2();
+            case 3:
+                return this.mockConfig.getInfosList3();
+        }
+        return this.mockConfig.getInfosList1();
+    }
+
+    /**
+     * 我的中心
+     * @return
+     */
+    @GetMapping("my/info")
+    public String myInfo() {
+        return this.mockConfig.getMy();
+    }
+}
+```
+
+### 4. 测试
+
+<img src="1-React.assets/image-20210326122145653.png" alt="image-20210326122145653" style="zoom:67%;" />
+
+### 5. 整合前端
+
+<img src="1-React.assets/image-20210326122106121.png" alt="image-20210326122106121" style="zoom:67%;" />
+
+#### axios
+
+Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。
+
+-   从浏览器中创建 [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+-   从 node.js 创建 [http](http://nodejs.org/api/http.html) 请求
+-   支持 [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) API
+-   拦截请求和响应
+-   转换请求数据和响应数据
+-   取消请求
+-   自动转换 JSON 数据
+-   客户端支持防御
