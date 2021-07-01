@@ -147,11 +147,11 @@ JDK帮助文档
 
 #### javaDoc
 
--   @author：作者
--   @version：当前版本
--   @since：最初版本
--   @param：参数
--   @throws：异常
+-   `@author`：作者
+-   `@version`：当前版本
+-   `@since`：最初版本
+-   `@param`：参数
+-   `@throws`：异常
 
 <div style="page-break-after:always"></div>
 

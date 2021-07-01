@@ -14,7 +14,7 @@
 
 @注释名,可以加参数值 
 
--   @SuppressWarning("all")
+-   `@SuppressWarning("all")`
 
 >   附加在package,class,method,field上，可以通过反射机制实现对元数据的访问
 
@@ -22,13 +22,13 @@
 
 ==元注解==：负责注解其他注解的注解
 
-#### @Target
+#### `@Target`
 
 >   描述注解的使用范围
 
 ![image-20210211190549719](annotation&reflection.assets/image-20210211190549719.png)
 
-#### @Retention
+#### `@Retention`
 
 >   描述注解的生命周期
 >
@@ -36,39 +36,39 @@
 
 ![image-20210211191849975](annotation&reflection.assets/image-20210211191849975.png)
 
-#### @Document
+#### `@Document`
 
 >   该注解是否被包含在生成的javadoc中
 
-#### @Inherited
+#### `@Inherited`
 
 >   子类可以继承父类中的该注解
 
 ### 内置注解
 
-#### @Overwrite
+#### `@Overwrite`
 
 >   java.lang.Override,==只用于修饰方法==表示一个方法声明打算重写或覆盖超类中的方法声明
 
 ![image-20210211184656648](annotation&reflection.assets/image-20210211184656648.png)
 
-#### @Deprecated
+#### `@Deprecated`
 
 >   java.lang.Deprecated,表示不鼓励使用的元素，通常因为存在危险或有更好的选择
 
 ![image-20210211184709218](annotation&reflection.assets/image-20210211184709218.png)
 
-#### @SuppressWarning
+#### `@SuppressWarning`
 
 >   java.lang.SuppressWarnings,一直编译时的警告信息
 
--   @SuppressWarning("all")：消除全部警告
--   @SuppressWarning("unchecked")：
--   @SuppressWarning(value={"unchecked","deprecated"})
+-   `@SuppressWarning("all")`：消除全部警告
+-   `@SuppressWarning("unchecked")`：
+-   `@SuppressWarning(value={"unchecked","deprecated"})`
 
 ![image-20210211184721987](annotation&reflection.assets/image-20210211184721987.png)
 
-### 自定义注解@interface
+### 自定义注解`@interface`
 
 ```java
 //MyAnnotation.interface
