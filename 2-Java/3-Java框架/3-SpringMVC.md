@@ -244,7 +244,7 @@ MVC框架做的事：
 
 ## SpringMVC简介
 
-(文档)[https://docs.spring.io/spring-framework/docs/current/reference/html/web.html]
+[文档](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html)
 
 -   轻量级
 -   基于请求响应的MVC框架
@@ -259,7 +259,7 @@ MVC框架做的事：
 
 ![mvc root context](SpringMVC.assets/mvc-root-context.png)
 
-### ==SpringMVC原理==
+### _SpringMVC原理_
 
 ![mvc](SpringMVC.assets/mvc.png)
 
@@ -283,8 +283,6 @@ MVC框架做的事：
     DispatcherServlet调用HandlerMapping,根据url找对应的Handler
 
 3.  HandlerExecution表示具体的Handler,作用是根据url查找Controller: /hello
-
-4.  
 
 5.  HandlerAdapter表示处理器适配器，其按照特定的规则去执行Handler，适配Controller
 
@@ -535,15 +533,15 @@ public class FrontController {
 }
 ```
 
->   @Component
+>   `@Component`
 >
->   @Service
+>   `@Service`
 >
->   @Controller
+>   `@Controller`
 >
->   @Repository
+>   `@Repository`
 
-###### @RequestMapping
+###### `@RequestMapping`
 
 -   用于映射url到控制器类或一个特定的处理程序方法
 -   用于类上，表示类中所有响应的请求都是以该地址作为父路径
@@ -553,7 +551,7 @@ public class FrontController {
 
 <div style="page-break-after:always" />
 
-## ==RestFul风格——参数传递==
+## _RestFul风格——参数传递_
 
 >   Restful是一个资源定位及资源操作的风格
 >
@@ -580,7 +578,7 @@ localhost:8090/method/1/2/3/4
 
 ### Restful传递参数
 
-SpringMVC中使用注解@PathVariable注解，让方法参数的值绑定到一个URI模板变量上
+SpringMVC中使用注解`@PathVariable`注解，让方法参数的值绑定到一个URI模板变量上
 
 ```java
 /*
@@ -599,7 +597,7 @@ public String deliverParam(@PathVariable int a,@PathVariable int b, Model model)
 
 >   @[请求方式]Mapping("[restful]") 
 >
->   <==> @RequestMapping(value="[restful]",method=RequestMethod.[请求方式])
+>   <==> `@RequestMapping(value="[restful]",method=RequestMethod.[请求方式])`
 
 ```java
 @RequestMapping(value = "add/{a}/{b}",method = RequestMethod.GET)
@@ -643,9 +641,9 @@ public String hello(String name){
 
 >   提交数据：localhost:8090/hello?username=kuangshen
 
->   处理方法 @RequestParam("[域名称]")
+>   处理方法 `@RequestParam("[域名称]")`
 >
->   -   **前端的属性名都要加上@RequestParam**
+>   -   **前端的属性名都要加上`@RequestParam`**
 
 ```java
 @RequestMapping("/hello")
@@ -880,7 +878,7 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 >   -   简洁清晰的层次结构
 >   -   易于人阅读和编写，同时也易于及其解析和生成，提升网络传输效率
 
-```json
+```javascript
 <!--js对象-->
 var 变量名 = {key:value,key:value}
 
@@ -1089,7 +1087,7 @@ public class JSONUtils {
 
 <div style="page-break-after:always" />
 
-## ==SSM整合==
+## _SSM整合_
 
 ### JRE环境
 

@@ -8,9 +8,9 @@ sort: 1
 
 ## 文档
 
-[官方文档][https://mybatis.org/mybatis-3/zh/getting-started.html]
+[官方文档](https://mybatis.org/mybatis-3/zh/getting-started.html)
 
-[下载链接][https://github.com/mybatis/mybatis-3/releases]
+[下载链接](https://github.com/mybatis/mybatis-3/releases)
 
 >   sql相关
 

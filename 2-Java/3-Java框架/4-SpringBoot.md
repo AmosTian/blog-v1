@@ -34,7 +34,7 @@ war:tomcat运行
 
 Spring再简化：SpringBoot-jar:内嵌Tomcat；微服务架构
 
-服务越来越多==>Spring Cloud
+服务越来越多_>Spring Cloud
 
 >    **约定大于配置**
 >
@@ -58,8 +58,8 @@ Spring再简化：SpringBoot-jar:内嵌Tomcat；微服务架构
 >   一种架构风格,通过http的方式进行互通
 >
 >   -   MVC架构
->       -   service \==> 模块化 \==> 微服务
->       -   controller ==> 提供接口 ==> 服务网格
+>       -   service \_> 模块化 \_> 微服务
+>       -   controller _> 提供接口 _> 服务网格
 >   -   微服务架构
 
 #### 组件化与模块化
@@ -151,7 +151,7 @@ Spring再简化：SpringBoot-jar:内嵌Tomcat；微服务架构
 
 ![image-20210225121311369](SpringBoot.assets/image-20210225121311369.png)
 
-==>重启idea后解决
+_>重启idea后解决
 
 ##### Maven
 
@@ -239,7 +239,7 @@ public class HelloWorldApplication(){
 }
 ```
 
--   @SpringBootApplication，说明这个类是SpringBoot的主配置类
+-   `@SpringBootApplication`，说明这个类是SpringBoot的主配置类
 
 #### 3. 导入web依赖
 
@@ -316,11 +316,11 @@ public class Springboot01Application {
 
 ![image-20210223122012223](SpringBoot.assets/image-20210223122012223.png)
 
-在应用程序的入口加上@EnableMyConfig注解。这样的话，MyConfig就被注入进来了
+在应用程序的入口加上`@EnableMyConfig`注解。这样的话，MyConfig就被注入进来了
 
 SpringBoot也就是用这个完成的。只不过它用了更加高级点的ImportSelector。
 
-### ==@SpringBootApplication==
+### `@SpringBootApplication`
 
 >    将这个类标注为Springboot主配置类；启动类下的所有资源并导入
 
@@ -330,7 +330,7 @@ SpringBoot也就是用这个完成的。只不过它用了更加高级点的Impo
 
 #### ImportSelector在SpringBoot中的使用
 
-@EnableAutoConfiguration注解中使用了AutoConfigurationImportSelector（自动配置类的导入选择器），用于配置导入哪些自动配置类。
+`@EnableAutoConfiguration`注解中使用了AutoConfigurationImportSelector（自动配置类的导入选择器），用于配置导入哪些自动配置类。
 
 ##### 第1层. selectImports
 
@@ -393,22 +393,22 @@ org.springframework.boot.autoconfigure.MessageSourceAutoConfiguration,\
 
 `@ConditionalOnClass` 经过exclude和filter等操作，最终确定要装配的类。
 
-#### @ConditionalOnXXX
+#### `@ConditionalOnXXX`
 
-| @Conditional扩展注解            | 作用（判断是否满足当前指定条件） |
-| ------------------------------- | -------------------------------- |
-| @ConditionalOnJava              | 系统的java版本是否符合要求       |
-| @ConditionalOnBean              | 容器中是否存在指定Bean           |
-| @ConditionalOnMissingBean       | 容器中不存在指定Bean             |
-| @ConditionalOnExpression        | 满足SpEL表达式指定               |
-| @ConditionalOnClass             | 系统中有指定的类                 |
-| @ConditionalOnMissingClass      | 系统中没有指定的类               |
-| @ConditionalOnSingleCandidate   | 容器中只有一个指定的Bean         |
-| @ContidionalOnProperty          | 系统中指定的属性是否有指定的值   |
-| @ContidionalOnResource          | 类路径下是否存在指定资源文件     |
-| @ContidionalOnWebApplication    | 当前是web环境                    |
-| @ContidionalOnNotWebApplication | 当前不是Web环境                  |
-| @ConditionalOnJndi              | JNDI存在指定项                   |
+| `@Conditional`扩展注解            | 作用（判断是否满足当前指定条件） |
+| --------------------------------- | -------------------------------- |
+| `@ConditionalOnJava`              | 系统的java版本是否符合要求       |
+| `@ConditionalOnBean`              | 容器中是否存在指定Bean           |
+| `@ConditionalOnMissingBean`       | 容器中不存在指定Bean             |
+| `@ConditionalOnExpression`        | 满足SpEL表达式指定               |
+| `@ConditionalOnClass`             | 系统中有指定的类                 |
+| `@ConditionalOnMissingClass`      | 系统中没有指定的类               |
+| `@ConditionalOnSingleCandidate`   | 容器中只有一个指定的Bean         |
+| `@ContidionalOnProperty`          | 系统中指定的属性是否有指定的值   |
+| `@ContidionalOnResource`          | 类路径下是否存在指定资源文件     |
+| `@ContidionalOnWebApplication`    | 当前是web环境                    |
+| `@ContidionalOnNotWebApplication` | 当前不是Web环境                  |
+| `@ConditionalOnJndi`              | JNDI存在指定项                   |
 
 #### 总结
 
@@ -420,10 +420,10 @@ org.springframework.boot.autoconfigure.MessageSourceAutoConfiguration,\
 
 将SpringBoot启动
 
--   ==推断应用类型是普通项目还是web项目==
+-   _推断应用类型是普通项目还是web项目_
 -   查找并加载所有可用的初始化器，设置到initializers属性中
 -   找出所有的而应用程序监听器，设置到listeners属性中
--   ==推断并设置main方法的定义类，找出运行的主类==
+-   _推断并设置main方法的定义类，找出运行的主类_
 
 ![图片](SpringBoot.assets/640)
 
@@ -437,17 +437,17 @@ org.springframework.boot.autoconfigure.MessageSourceAutoConfiguration,\
 
 >   以数据为中心
 >
->   ==空格控制层级==
+>   _空格控制层级_
 >
 >   属性和值，大小写敏感
 >
 >   ""：不转义，输出特殊字符表示的内容
 >
->   -   name: "hello \n !" ==>hello [换行] !
+>   -   name: "hello \n !" _>hello [换行] !
 >
 >   '':转义，将特殊字符以字符串形式输出
 >
->   -   name: 'hello \n !' ==> hello \n !
+>   -   name: 'hello \n !' _> hello \n !
 
 ```xml
 <server>
@@ -492,7 +492,7 @@ pets: [cats,dogs,pig]
 
 #### 获取之前的值，指定默认值
 
--   ${[A]:[B]}==>存在用A，不存在用B
+-   ${[A]:[B]}_>存在用A，不存在用B
 
 ```yaml
 person:
@@ -624,23 +624,23 @@ public class Person {
 
 `@ConfigurationProperties` 与 `@Value`
 
-|                    | @ConfigurationProperties       | @Value     |                      |
-| ------------------ | ------------------------------ | ---------- | -------------------- |
-| 功能               | 从全局配置文件中，批量注入属性 | 一个个指定 |                      |
-| 松散绑定(松散语法) | 支持                           | 不支持     | last-name==>lastName |
-| SpEL               | 不支持                         | 支持       | #{11*2}              |
-| JSR303数据校验     | 支持                           | 不支持     | @Validated           |
-| 复杂类型封装       | 支持                           | 不支持     | ${maps.key}          |
+|                    | `@ConfigurationProperties`     | `@Value`   |                     |
+| ------------------ | ------------------------------ | ---------- | ------------------- |
+| 功能               | 从全局配置文件中，批量注入属性 | 一个个指定 |                     |
+| 松散绑定(松散语法) | 支持                           | 不支持     | last-name_>lastName |
+| SpEL               | 不支持                         | 支持       | #{11*2}             |
+| JSR303数据校验     | 支持                           | 不支持     | `@Validated`        |
+| 复杂类型封装       | 支持                           | 不支持     | ${maps.key}         |
 
 ##### 松散绑定
 
-yml中横线命名	==>	java中驼峰命名
+yml中横线命名	_>	java中驼峰命名
 
-last-name				==>	lastName
+last-name				_>	lastName
 
 ##### JSR303校验
 
-`@Validated`==>开启数据验证
+`@Validated`_>开启数据验证
 
 ```java
 @NotNull(message="名字不能为空")
@@ -674,8 +674,8 @@ Booelan检查
 
 #### 结论
 
--   在某个业务中，只需要配置某个属性的值==>@Value
--   专门编写了一个JavaBean来和配置文件映射==>@ConfigurationProperties
+-   在某个业务中，只需要配置某个属性的值_>`@Value`
+-   专门编写了一个JavaBean来和配置文件映射_>`@ConfigurationProperties`
 
 ### 全局配置文件
 
@@ -724,11 +724,11 @@ springjava -jar [打包后包名] --spring.config.location=F:/application.proper
 
 #### `@PropertySource(value={"",""})`
 
-==>读取指定的配置文件
+_>读取指定的配置文件
 
 #### `@ImportResource(location={"",""})`
 
-==>在一个配置类上标注，导入Spring配置文件，让其生效
+_>在一个配置类上标注，导入Spring配置文件，让其生效
 
 #### SpringBoot推荐使用配置类编写配置
 
@@ -793,21 +793,21 @@ java -jar [打包后包名] --spring.profiles.active=dev
 
 ![image-20210223192432319](SpringBoot.assets/image-20210223192432319.png)
 
-### ==自动装配全过程==
+### _自动装配全过程_
 
->   application.yml能配置什么\==>
+>   application.yml能配置什么\_>
 
 #### 1. 什么会被自动装配
 
--   `@SpringBootConfiguration` ==>声明SpringBoot主配置类也是一个组件，由Spring容器管理
+-   `@SpringBootConfiguration` _>声明SpringBoot主配置类也是一个组件，由Spring容器管理
 
--   `@ComponentScan` ==>指明要扫描的位置
+-   `@ComponentScan` _>指明要扫描的位置
 
--   `@EnableAutoConfiguration`==>开启自动配置功能
+-   `@EnableAutoConfiguration`_>开启自动配置功能
     
-    -   `@AutoConfigurationPackage` ==>导入自动注册包，用于将 `@ComponentScan` 扫描的组件注册到Spring容器中
+    -   `@AutoConfigurationPackage` _>导入自动注册包，用于将 `@ComponentScan` 扫描的组件注册到Spring容器中
     
-    -   `@Import({AutoConfigurationImportSelector})`==>XXXAutoConfiguration的导入选择器
+    -   `@Import({AutoConfigurationImportSelector})`_>XXXAutoConfiguration的导入选择器
     
         用于将 springboot-autoconfigure/META-INF/spring.factories 中的 `XXXAutoConfiguration` 封装为Properties对象，从properties中获取到EnableAutoConfiguration.class类对应的值，把他们加载到容器中
 
@@ -815,7 +815,7 @@ java -jar [打包后包名] --spring.profiles.active=dev
 
 在application.yaml中能配置的属性，,这些属性的默认值在 `XXXProperties`中 ：
 
--   一定会存在对应的 `XXXAutoConfiguration`类，由@EnableAutoContiguration 将这些配置类封装为 Properties 类加载到运行主类中
+-   一定会存在对应的 `XXXAutoConfiguration`类，由`@EnableAutoContiguration` 将这些配置类封装为 Properties 类加载到运行主类中
 
 #### 3. 每一个XXXAutoConfiguration进行自动配置功能
 
@@ -902,7 +902,7 @@ debug: true
 3.  只要自动配置类中的组件满足要求，则无需手动配置
 4.  给容器中自动配置类添加组件时，会从Properties中获取某些属性，只需要在 `application.yml`中指定这些属性值即可
 
-XXXAutoContiguration:自动配置类==>将组件添加到容器中
+XXXAutoContiguration:自动配置类_>将组件添加到容器中
 
 XXXProperties：封装配置文件中相关属性
 
@@ -1530,7 +1530,7 @@ protected void addResourceHandlers(ResourceHandlerRegistry registry) {
 -   static        ：静态资源，图片
 -   public       :公共资源
 
-==> localhost:8080/webjars/**
+_> localhost:8080/webjars/**
 
 **优先级**
 
@@ -1741,7 +1741,7 @@ spring-boot-starter-thymeleaf
 ###### Comparisons and equality:比较运算
 
 -   Comparators: `>`, `<`, `>=`, `<=` (`gt`, `lt`, `ge`, `le`)
--   Equality operators: `==`, `!=` (`eq`, `ne`)
+-   Equality operators: `_`, `!=` (`eq`, `ne`)
 
 ###### Conditional operators:条件运算
 
@@ -1769,7 +1769,7 @@ All these features can be combined and nested:
 
 ##### redirect
 
-==>底层也是response.sendredirect 实现页面重定向
+_>底层也是response.sendredirect 实现页面重定向
 
 ![image-20210228194341578](SpringBoot.assets/image-20210228194341578.png)
 
@@ -1801,7 +1801,7 @@ protected void renderMergedOutputModel(
 
     // Obtain a RequestDispatcher for the target resource (typically a JSP).
     RequestDispatcher rd = getRequestDispatcher(request, dispatcherPath);
-    if (rd == null) {
+    if (rd _ null) {
         throw new ServletException("Could not get RequestDispatcher for [" + getUrl() +
                                    "]: Check that the corresponding file exists within your web application archive!");
     }
@@ -1857,7 +1857,7 @@ protected void renderMergedOutputModel(
 
 `converter(转换器)`:前端提交的数据自动封装为相应的POJO
 
-`Formatter(格式化器)`:字符串==>Date类型
+`Formatter(格式化器)`:字符串_>Date类型
 
 -   ![image-20210226164737142](SpringBoot.assets/image-20210226164737142.png)
 
@@ -1871,7 +1871,7 @@ protected void renderMergedOutputModel(
 
 >    SpringMVC用来转换Http请求和响应
 >
->   ​       POJO-User==>JSON
+>   ​       POJO-User_>JSON
 
 ![image-20210226165701261](SpringBoot.assets/image-20210226165701261.png)
 
@@ -1913,7 +1913,7 @@ public class MyConfiguration {
 
 初始化WebDataBinder
 
-请求数据====JavaBean
+请求数据__JavaBean
 
 #### 扩展MVC功能
 
@@ -1950,7 +1950,7 @@ public class ToPageController {
 public class MyInteceptor implements HandlerInterceptor{
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("====方法执行前!====");
+        System.out.println("__方法执行前!__");
 
         /*
             * return true;放行
@@ -1960,17 +1960,17 @@ public class MyInteceptor implements HandlerInterceptor{
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        System.out.println("====方法完成后!====");
+        System.out.println("__方法完成后!__");
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        System.out.println("====清理====");
+        System.out.println("__清理__");
     }
 }
 ```
 
-扩展SpringMVC,==互补配置==
+扩展SpringMVC,_互补配置_
 
 ```java
 @Configuration
@@ -1993,7 +1993,7 @@ public class MyConfig implements WebMvcConfigurer {
 class MyInteceptor implements HandlerInterceptor{
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("====方法执行前!====");
+        System.out.println("__方法执行前!__");
 
         /*
          * return true;放行
@@ -2003,12 +2003,12 @@ class MyInteceptor implements HandlerInterceptor{
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        System.out.println("====方法完成后!====");
+        System.out.println("__方法完成后!__");
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        System.out.println("====清理====");
+        System.out.println("__清理__");
     }
 }
 ```
@@ -2037,7 +2037,7 @@ class MyInteceptor implements HandlerInterceptor{
 
     -   `addWebMvcConfigurers` 将所有实现了WebMvcConfigurer的configuration一起调用
 
-    可见SpringBoot实现的自动配置会与自定义的自动配置一起调用形成==互补配置==
+    可见SpringBoot实现的自动配置会与自定义的自动配置一起调用形成_互补配置_
 
 ### 第一个MVC项目
 
@@ -2125,7 +2125,7 @@ public class EmployeeDao {
 
     //新增
     public void save(Employee employee){
-        if(employee.getId()==null){//实现自增
+        if(employee.getId()_null){//实现自增
             employee.setId(initId++);
         }
 
@@ -2255,7 +2255,7 @@ public class AcceptHeaderLocaleResolver implements LocaleResolver {
 	@Override
 	public Locale resolveLocale(HttpServletRequest request) {
 		Locale defaultLocale = getDefaultLocale();
-		if (defaultLocale != null && request.getHeader("Accept-Language") == null) {
+		if (defaultLocale != null && request.getHeader("Accept-Language") _ null) {
 			return defaultLocale;
 		}
 		Locale requestLocale = request.getLocale();
@@ -2470,7 +2470,7 @@ public class LoginController {
 }
 ```
 
-==>考虑到刷新页面 `重新提交表单`问题
+_>考虑到刷新页面 `重新提交表单`问题
 
 ![image-20210227113118384](SpringBoot.assets/image-20210227113118384.png)
 
@@ -2499,9 +2499,9 @@ public class LoginController {
 }
 ```
 
-==>新问题：直接输入地址，会跳转到目标页面
+_>新问题：直接输入地址，会跳转到目标页面
 
-==>解决：使用拦截器，拦截非法请求
+_>解决：使用拦截器，拦截非法请求
 
 ##### 拦截器进行登录检查
 
@@ -2509,7 +2509,7 @@ public class LoginController {
 
 2.  拦截的情况：
     
--   没有登录==>session中，user为null
+-   没有登录_>session中，user为null
     
 3.  放行的情况：
 
@@ -2558,7 +2558,7 @@ public class MyInterceptor implements HandlerInterceptor {
                              Object handler) throws Exception {
         Object loginUser = request.getSession().getAttribute("loginUser");
 
-        if(loginUser == null){
+        if(loginUser _ null){
             //未登录，拦截
             request.setAttribute("msg","未登录，没有权限!");
             request.getRequestDispatcher("/").forward(request,response);
@@ -2614,7 +2614,7 @@ public void addInterceptors(InterceptorRegistry registry) {
 
 ##### R——列表页面
 
-1.  前端点击 员工信息 ==> 发送emps请求
+1.  前端点击 员工信息 _> 发送emps请求
 
     ![image-20210227213638344](SpringBoot.assets/image-20210227213638344.png)
 
@@ -2740,7 +2740,7 @@ public void addInterceptors(InterceptorRegistry registry) {
                 <td th:text="${emp.id}"></td>
                 <td th:text="${emp.lastName}"></td>
                 <td th:text="${emp.email}"></td>
-                <td th:text="${emp.gender}==0?'女':'男'"></td>
+                <td th:text="${emp.gender}_0?'女':'男'"></td>
                 <td th:text="${emp.department.departmentName}"></td>
                 <td th:text="${#dates.format(emp.birth,'yyyy-MM-dd HH:mm:ss')}"></td>
                 <td>
@@ -2923,18 +2923,18 @@ springBoot装配SpringMVC时，默认关闭请求过滤器，所以需要在配�
     <div class="form-group">
         <label>Gender</label><br/>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="gender" checked th:value="1" th:checked="${emp!=null}?${emp.gender}==1">
+            <input class="form-check-input" type="radio" name="gender" checked th:value="1" th:checked="${emp!=null}?${emp.gender}_1">
             <label class="form-check-label">男</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="gender" th:value="0" th:checked="${emp!=null}?${emp.gender}==0">
+            <input class="form-check-input" type="radio" name="gender" th:value="0" th:checked="${emp!=null}?${emp.gender}_0">
             <label class="form-check-label">女</label>
         </div>
     </div>
     <div class="form-group">
         <label>Department</label>
         <select class="form-control" name="department.id">
-            <option th:selected="${emp!=null}?${depart.id==emp.id}" th:each="depart:${departments}" th:value="${depart.id}" th:text="${depart.departmentName}"></option>
+            <option th:selected="${emp!=null}?${depart.id_emp.id}" th:each="depart:${departments}" th:value="${depart.id}" th:text="${depart.departmentName}"></option>
         </select>
     </div>
     <div class="form-group">
@@ -2992,7 +2992,7 @@ public String delete(@PathVariable("id") Integer id){
 }
 ```
 
-==>问题：每一个表项都会创建一个表单
+_>问题：每一个表项都会创建一个表单
 
 ###### Thymeleaf自定义属性值
 
@@ -3044,7 +3044,7 @@ public String delete(@PathVariable("id") Integer id){
 
 一旦系统出现4XX或者5XX，`ErrorPageCustomizer` 就会生效（定制错误的响应规则）； 发送`/error`请求，由 `BasicErrorController` 处理 /error 请求；响应处理中携带的信息由`DefaultErrorAttriute`指定
 
-返回结果==>
+返回结果_>
 
 -   响应页面:去哪个页面由`DefaultErrorViewResolver`解析得到，将错误信息(status,model)发送给所有的ErrorViewResolver,得到ModelAndView
 
@@ -3080,7 +3080,7 @@ public String delete(@PathVariable("id") Integer id){
 
 ### 如何定制错误页面？
 
-#### ==1. 有模板引擎==
+#### _1. 有模板引擎_
 
 -   将错误页面命名为 `错误状态.html`，放在模板引擎文件文件夹下的error文件夹下
 -   发生哪个错误状态码，跳转到哪个页面 `error/状态码`
@@ -3185,7 +3185,7 @@ public class ExceptionController {
 
 -   浏览器，客户端的返回都是JSON
 
-==>如何变成错误请求自适应响应
+_>如何变成错误请求自适应响应
 
 #### 2. 转发到 /error 请求
 
@@ -3199,15 +3199,15 @@ public class ExceptionController {
 
 ![image-20210301200549284](SpringBoot.assets/image-20210301200549284.png)
 
-原因==>状态码，2开头表示请求成功，之前的错误视图都是4开头
+原因_>状态码，2开头表示请求成功，之前的错误视图都是4开头
 
-响应页面设置状态码==>从HttpRequest中获取状态码
+响应页面设置状态码_>从HttpRequest中获取状态码
 
 ![image-20210301201247349](SpringBoot.assets/image-20210301201247349.png)
 
 ![image-20210301201101370](SpringBoot.assets/image-20210301201101370.png)
 
-==>传入自己的错误状态码
+_>传入自己的错误状态码
 
 ```java
 @ExceptionHandler(UserNotExistException.class)
@@ -3227,7 +3227,7 @@ public String handleException(Exception e, HttpServletRequest request){
 
 问题：没有将定制属性携带出去
 
-#### ==3. 携带自定义属性实现自适应响应处理==
+#### _3. 携带自定义属性实现自适应响应处理_
 
 ##### 原理
 
@@ -3616,7 +3616,7 @@ public class TomcatWebServer implements WebServer {
     Assert.notNull(tomcat, "Tomcat Server must not be null");
     this.tomcat = tomcat;
     this.autoStart = autoStart;
-    this.gracefulShutdown = (shutdown == Shutdown.GRACEFUL) ? new GracefulShutdown(tomcat) : null;
+    this.gracefulShutdown = (shutdown _ Shutdown.GRACEFUL) ? new GracefulShutdown(tomcat) : null;
     initialize();
 }
 ```
@@ -3635,7 +3635,7 @@ public static class BeanPostProcessorsRegistrar implements ImportBeanDefinitionR
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata,
 	BeanDefinitionRegistry registry) {
-        if (this.beanFactory == null) {
+        if (this.beanFactory _ null) {
             return;
         }
         

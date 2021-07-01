@@ -110,7 +110,7 @@ sort: 2
     }
     ```
 
-4.  ==UserServicelmpl业务实现类==
+4.  _UserServicelmpl业务实现类_
 
     ```java
     public class UserServiceImpl implements UserService{
@@ -180,7 +180,7 @@ sort: 2
     }
     ```
 
-4.  ==UserServicelmpl业务实现类==
+4.  _UserServicelmpl业务实现类_
 
     ```java
     public class UserServiceImpl implements UserService{
@@ -232,13 +232,13 @@ public void setUserDao(UserDao userDao){
 
 **IOC是一种设计思想，DI（依赖注入）是实现IOC的一种方法，在Spring中实现IoC的是IoC容器**
 
->    ==控制反转：获得对象的方式反转==
+>    _控制反转：获得对象的方式反转_
 >
 >   -   程序由主动创建对象变为被动接收对象
 >
 >   ![img](Spring.assets/1.png)
 >
->   ==依赖注入==
+>   _依赖注入_
 >
 >   -   利用set方法进行注入
 
@@ -358,7 +358,7 @@ public void test(){
     -   The `property name` element refers to the name of the JavaBean property
     -   and the `ref` element refers to the name of another bean definition. 
 
-### ==依赖注入DI==
+### _依赖注入DI_
 
 -   依赖：bean对象的创建依赖于IoC容器
 -   注入：bean对象中的所有属性，由容器来注入
@@ -387,7 +387,7 @@ public void test(){
     </bean>
     ```
 
-3.  ==直接通过参数名设置-name==
+3.  _直接通过参数名设置-name_
 
     ```xml
     <bean id="hello" class="com.kuang.pojo.Hello">
@@ -589,7 +589,7 @@ public class Student {
 
 >   每次getBean()都会得到新的对象
 
-### ==Bean==的自动装配
+### _Bean_的自动装配
 
 >   Spring会在上下文中自动寻找，自动装配属性
 
@@ -654,27 +654,27 @@ public class Student {
     </beans>
     ```
 
-**@AutoWired**
+`@AutoWired`
 
->   在 ==bean属性==或==setters==上注解
+>   在 _bean属性_或_setters_上注解
 >
 >   相当于byType
 
--   @Qualifier(value="cat1111")
+-   `@Qualifier(value="cat1111")`
     -   通过bean.id指定容器中装配的Bean
     -   当IoC Container环境复杂，搭配使用
--   @Nullable：表示这个注解修饰的内容允许为Null
+-   `@Nullable`：表示这个注解修饰的内容允许为Null
     -   METHOD、PARAMETER、FIELD
--   @AutoWired(required=false)：表示该注解修饰的内容可以为空
+-   `@AutoWired(required=false)`：表示该注解修饰的内容可以为空
     -   CONSTRUCTOR、METHOD、PARAMETER、FIELD、ANNOTATION_TYPE
 
-**@Resource**
+`@Resource`
 
 >   当 ByName失效，通过ByType找到唯一的类型匹配的Bean
 
--   @Resource(name="指定bean.id")
+-   `@Resource(name="指定bean.id")`
 
-#### ==在java中显式配置——零配置xml==
+#### 在java中显式配置——零配置xml
 
 JavaConfig是Spring的子项目，Spring4后，称为核心功能
 
@@ -705,11 +705,11 @@ public class AppConfig {
 
 ### 使用Spring注解开发
 
->   在Spring4之后，使用注解开发，必须保证==aop包==导入
+>   在Spring4之后，使用注解开发，必须保证_aop包_导入
 >
 >   使用注解需要导入context约束，增加context配置
 
-指定要扫描的包，该包下的注解会生效==\<context:component-scan base-package="com.kuang.pojo"/>==
+指定要扫描的包，该包下的注解会生效`<context:component-scan base-package="com.kuang.pojo"/>`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -726,7 +726,7 @@ public class AppConfig {
 </beans>
 ```
 
-#### @Component——bean
+#### `@Component`——bean
 
 >   组件，放在类上，说明这个类被Spring管理，就是Bean
 
@@ -744,16 +744,16 @@ public class User {
 
 ##### 衍生注解
 
-在Web开发中，会按照MVC分层，与@Component等价
+在Web开发中，会按照MVC分层，与`@Component`等价
 
 -   Dao
-    -   @Repository
+    -   `@Repository`
 -   Service
-    -   @Service
+    -   `@Service`
 -   Controller
-    -   @Controller
+    -   `@Controller`
 
-#### @Value("")——属性
+#### `@Value("")`——属性
 
 >   通过注解注入，在属性与属性的setters()上注入等价
 
@@ -772,23 +772,23 @@ public class User {
 
 ####  自动装配
 
-**@AutoWired**
+`@AutoWired`
 
->   在 ==属性==或==setters==上注解
+>   在 _属性_或_setters_上注解
 >
 >   相当于byType
 
--   @Qualifier(value="cat1111")
+-   `@Qualifier(value="cat1111")`
     -   通过bean.id指定容器中装配的Bean
     -   当IoC Container环境复杂，搭配使用
--   @Nullable：表示这个注解修饰的内容允许为Null
+-   `@Nullable`：表示这个注解修饰的内容允许为Null
     -   METHOD、PARAMETER、FIELD
--   @AutoWired(required=false)：表示该注解修饰的内容可以为空
+-   `@AutoWired(required=false)`：表示该注解修饰的内容可以为空
     -   CONSTRUCTOR、METHOD、PARAMETER、FIELD、ANNOTATION_TYPE
 
 #### 作用域
 
-@Scope("")
+`@Scope("")`
 
 -   singleton
 -   prototype
@@ -799,7 +799,7 @@ public class User {
 
 ## AOP
 
-### ==代理模式==
+### _代理模式_
 
 >    代理模式是Spring AOP的底层【Spring AOP】【Spring MVC】
 
@@ -1046,7 +1046,7 @@ When a method（抽象角色-->接口） is invoked on a proxy instance, the met
     }
     ```
 
-3.  ==调用处理程序动态生成代理角色、绑定真实角色==
+3.  _调用处理程序动态生成代理角色、绑定真实角色_
 
     ```java
     //代理处理程序：自动生成代理类
@@ -1156,7 +1156,7 @@ When a method（抽象角色-->接口） is invoked on a proxy instance, the met
     }
     ```
 
-3.  ==调用处理程序-->动态生成代理类的程序==
+3.  _调用处理程序-->动态生成代理类的程序_
 
     ```java
     public class ProxyInvocationHandler implements InvocationHandler {
@@ -1212,7 +1212,7 @@ When a method（抽象角色-->接口） is invoked on a proxy instance, the met
 
 ![image-20210215102537624](Spring.assets/image-20210215102537624.png)
 
-==好处==
+_好处_
 
 -   一个动态代理类代理的是一个接口，对应的是一类业务
 -   一个动态代理类可以代理多个类，只要是实现同一接口即可
@@ -1231,7 +1231,7 @@ When a method（抽象角色-->接口） is invoked on a proxy instance, the met
 
 #### Spring AOP
 
-==提供声明式事务；允许用户自定义切面==
+_提供声明式事务；允许用户自定义切面_
 
 -   横切关注点：跨越应用程序多个模块的方法或功能(公共业务)，与业务逻辑无关，但需要关注的部分。如：日志，安全，缓存，事务
 -   切面(aspect)：横切关注点被模块化的对象-->类
@@ -1302,7 +1302,7 @@ public class UserServiceImpl implements UserService{
 }
 ```
 
-#### ==实现通知接口-->代理中的公共业务==
+#### _实现通知接口-->代理中的公共业务_
 
 ```java
 /*代理要做的公共业务 通知 Log.java
