@@ -1,7 +1,7 @@
 ---
-sort: 4
+sort: 6
 ---
 
-# 项目实战
+# Java开发项目实战
 
 {% include list.liquid all=true %}
