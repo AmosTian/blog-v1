@@ -2,6 +2,6 @@
 sort: 5
 ---
 
-# 计算机网络
+# 6. 计算机网络
 
 {% include list.liquid all=true %}
