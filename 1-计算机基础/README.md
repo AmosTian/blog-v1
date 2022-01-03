@@ -1,8 +1,9 @@
 ---
-sort: 4
+sort: 1
 ---
 
-# Java
+
+# 计算机基础
 
 {% include list.liquid all=true %}
 

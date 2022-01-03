@@ -2,8 +2,7 @@
 sort: 3
 ---
 
-
-# 计算机基础
+# Java
 
 {% include list.liquid all=true %}
 
