@@ -8,6 +8,8 @@ sort: 2
 
 ## IDEA目录结构
 
+>   C:\Users\Auspice Tian\AppData\Roaming\JetBrains\IntelliJIdea2021.3
+
 ![image-20210204085247994](IDEA.assets/image-20210204085247994.png)![image-20210204085318627](IDEA.assets/image-20210204085318627.png)
 
 ```xml
@@ -140,7 +142,7 @@ sort: 2
 
 3、Ctrl+Shift+Alt+/ 选择Registry,勾选compiler.automake.allow.when.app.running
 
-![img](IDEA.assets/20180613233659916)
+![img](IDEA.assets/20180613233659916.png)
 
 ### 断点调试
 
