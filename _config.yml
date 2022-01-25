@@ -18,6 +18,8 @@ plugins:
   - jekyll-avatar
   - jekyll-mentions
 
+timezone: Asia/Shanghai
+
 exclude:
   - Makefile
   - CNAME
