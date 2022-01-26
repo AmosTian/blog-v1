@@ -6,3 +6,5 @@
 >   学习笔记的梳理与总结
 
 {% include list.liquid all=true %}
+
+更新时间：{{ site.time | date: '%y-%m-%d %H:%M:%S' }}
