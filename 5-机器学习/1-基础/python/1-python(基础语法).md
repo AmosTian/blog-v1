@@ -4,18 +4,20 @@ sort: 1
 
 # Python(基础语法)
 
-@(Knowledge)[Auspice Tian][2021年1月24日20:35:58]
+## 0. 学习基础
 
-## 学习基础
-
-### Windows命令行
+### 0.1 Windows命令行
 - 用户界面分为两种：**TUI(文本交互界面)** 和 **GUI(图形交互界面)**
 - 命令行，Dos窗口，命令提示符，CMD，Shell，终端(Terminal)
 
-#### 进入命令行
-**Win + R**
+```shell
+Win + R
+```
 
-#### 命令行结构
+#### 0.1.1 命令行结构
+
+<img src="1-python(基础语法).assets/image-20220217223348297.png" alt="image-20220217223348297" style="zoom:50%;" />
+
 - 版本及版权声明
 > Microsoft Windows [版本 ] (C) Microsoft Corporation
 
@@ -24,54 +26,54 @@ sort: 1
 > - C：当前所在磁盘根目录	
 >
 > \Users\Administrator
-> - 所在磁盘的路径，当前所在文件加
+> - 所在磁盘的路径，当前所在文件夹
 > - cd 切换目录
 
-#### 常用Dos指令
-- dir
-	- 查看当前盘符所有文件
-- md
-	- 创建目录
-- rd
-	- 删除目录
-- del
-	- 删除文件
-- cls
-	- 清屏
+#### 0.1.2 常用Dos指令
 
 **命令格式**
+
 > 命令 [参数] [/选项]
 
-### 环境变量(enviroment variable)
+```shell
+dir # 查看当前盘符所有文件
+md # 创建目录
+rd #删除目录
+del #删除文件
+cls # 清屏
+```
+
+### 0.2 环境变量(enviroment variable)
 - 环境变量指的是操作系统中的一些变量
 	- 通过修改环境变量，对计算机进行配置（主要是配置一些路径） 
 
-#### Path环境变量
+#### 0.2.1 Path环境变量
 - 保存的是路径
 	- 在命令行输入命令式，会首先在当前目录下寻找，找到则执行
 	- 未找到则会依次去 *path* 环境变量中寻找
 
-#### 字符和字符集
+#### 0.2.2 字符和字符集
 - 将字符转换为二进制的过程，**解码**
 - 将二进制码转换为字符的过程，**编码**
 
-<div style="page-break-after:always"></div>
+#### 0.2.3 编译性语言和解释型语言
 
-## 简介
-### 编译性语言和解释型语言
 > 转换机器码时间不同
 
 - 编译型语言
-	- C语言
-	- 在代码执行前将代码编译为机器码
+    - C语言
+    - 在代码执行前将代码编译为机器码
 - 解释型语言
-	- Python ,js ,Java
-	- 执行时，一遍执行一遍编译
+    - Python ,js ,Java
+    - 执行时，一遍执行一遍编译
 
--  解释型语言具有跨平台性
+- 解释型语言具有跨平台性
 
-### python
-#### 应用
+## 1. 简介
+### 1.1 应用
+
+![image-20220217230823473](1-python(基础语法).assets/image-20220217230823473.png)
+
 - WEB应用
 - 爬虫程序
 - 科学计算
@@ -80,8 +82,8 @@ sort: 1
 - 云计算
 - 人工智能
 
-#### 环境搭建
-##### 解释器分类
+### 1.2 环境搭建
+#### 1.2.1 解释器分类
 - CPython
 	- 用C语言编写Python解释器
 - PyPy
@@ -91,27 +93,17 @@ sort: 1
 - JPython
 	- 用Java编写
 
-##### python交互模式
+#### 1.2.2 python交互模式
 **结构**
 - 版本版权声明
-```
+```shell
 Python 3.6.5 (v3.6.5:f59c0932b4, Mar 28 2018, 16:07:46) [MSC v.1900 32 bit (Intel)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
+>>> #命令提示符 输入python指令，输入结束直接执行
+# IDLE** 中 Tab 可以简单提醒 只适合简单测试
+exit() #退出
+python 文件名 # 执行 
 ```
-- \>\>\> 命令提示符
-	- 输入python指令，输入结束直接执行
-
-- **IDLE** 中 **Tab** 可以简单提醒
-- 只适合简单测试
-- **exit()** 退出
-- 执行 
-	- python 文件名
-
-##### sublime
-1. *Ctrl +B* 在内置的控制台中执行，在某些版本中不能使用 *input()* 函数
-
-<div style="page-break-after:always"></div>
-
 ## 基本语法
 
 ### 概念
