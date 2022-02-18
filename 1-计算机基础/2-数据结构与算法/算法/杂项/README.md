@@ -1,4 +1,9 @@
+---
+sort: 10
+---
 
-# 2-算法
+
+
+# 杂项
 
 {% include list.liquid all=true %}
